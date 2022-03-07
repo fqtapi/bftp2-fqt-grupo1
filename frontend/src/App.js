@@ -11,7 +11,7 @@ function App() {
     fetch("/coders")
         .then(response => response.json())
         .then(setCoders);
-  })
+  },[])
 
   return (
     <div className="App">
