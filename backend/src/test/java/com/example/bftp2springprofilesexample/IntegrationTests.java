@@ -1,5 +1,6 @@
 package com.example.bftp2springprofilesexample;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,23 +24,27 @@ class IntegrationTests {
     @Autowired
     private MockMvc api;
 
+    @BeforeEach
+    void setUp() {
+        coderRepository.deleteAll();
+    }
 
-//    @Test
-//    void returnsExistingCoders() throws Exception {
-//
-//        coderRepository.saveAll(
-//                List.of(new Coder("Amanda", "amanda@factoriaf5.org"),
-//                        new Coder("Laura", "laura@factoriaf5.org"))
-//        );
-//
-//        api.perform(get("/api/coders"))
-//                .andExpect(jsonPath("$[*]", hasSize(2)))
-//                .andExpect(jsonPath("$[0].name", equalTo("Amanda")))
-//                .andExpect(jsonPath("$[0].email", equalTo("amanda@factoriaf5.org")))
-//                .andExpect(jsonPath("$[0].name", equalTo("Laura")))
-//                .andExpect(jsonPath("$[0].email", equalTo("laura@factoriaf5.org"))) ;
-//
-//
-//    }
+    @Test
+    void returnsExistingCoders() throws Exception {
+
+        coderRepository.saveAll(
+                List.of(new Coder("Amanda", "amanda@factoriaf5.org"),
+                        new Coder("Laura", "laura@factoriaf5.org"))
+        );
+
+        api.perform(get("/coders"))
+                .andExpect(jsonPath("$[*]", hasSize(2)))
+                .andExpect(jsonPath("$[0].name", equalTo("Amanda")))
+                .andExpect(jsonPath("$[0].email", equalTo("amanda@factoriaf5.org")))
+                .andExpect(jsonPath("$[1].name", equalTo("Laura")))
+                .andExpect(jsonPath("$[1].email", equalTo("laura@factoriaf5.org"))) ;
+
+
+    }
 
 }
