@@ -12,18 +12,22 @@ public class Stock {
     private String codigo;
     @Lob
     private String descripcion;
+    private String category;
     private int cantidad;
 
 
-    public Stock(Long id, String codigo, String descripcion, int cantidad) {
+    public Stock(Long id, String codigo, String descripcion, String category, int cantidad) {
         this.id = id;
         this.codigo = codigo;
         this.descripcion = descripcion;
+        this.category = category;
         this.cantidad = cantidad;
     }
-public Stock (){
 
-}
+    public Stock() {
+
+    }
+
     public String getCodigo() {
         return codigo;
     }
@@ -55,4 +59,13 @@ public Stock (){
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
 }
