@@ -19,17 +19,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class IntegrationTests {
 
     @Autowired
-    private CoderRepository coderRepository;
+    private StockRepository stockRepository;
 
     @Autowired
     private MockMvc api;
 
-    @BeforeEach
-    void setUp() {
-        coderRepository.deleteAll();
-    }
+    //@BeforeEach
+   // void setUp() {
+        //StockRepository.deleteAll();
+ //   }
 
-    @Test
+    /*@Test
     void returnsExistingCoders() throws Exception {
 
         coderRepository.saveAll(
@@ -43,8 +43,8 @@ class IntegrationTests {
                 .andExpect(jsonPath("$[0].email", equalTo("amanda@factoriaf5.org")))
                 .andExpect(jsonPath("$[1].name", equalTo("Laura")))
                 .andExpect(jsonPath("$[1].email", equalTo("laura@factoriaf5.org"))) ;
-
+*/
 
     }
 
-}
+

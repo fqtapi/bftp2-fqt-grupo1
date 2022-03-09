@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route} from "react-router-dom";
+import {StockCatalog} from "./components/StockCatalog";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/stocks" element={<StockCatalog />} />
+              <Route path="/prueba" element={<Prueba />} />
+          </Routes>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
