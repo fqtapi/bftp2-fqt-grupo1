@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {StockCatalog} from "./components/StockCatalog";
+import Prueba from "./components/Prueba";
 
 ReactDOM.render(
   <React.StrictMode>
