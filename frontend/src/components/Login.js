@@ -1,5 +1,6 @@
+import './Login.css';
 
-function Loguin(){
+function Login(){
     return(
         <div className="footer">
             <h1>Pagina de Loguin</h1>
@@ -7,4 +8,4 @@ function Loguin(){
     );
 }
 
-export default Loguin;
+export default Login;
