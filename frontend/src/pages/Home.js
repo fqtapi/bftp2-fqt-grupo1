@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import React from 'react';
 import Card from "../components/Card";
+import "./Home.css"
 
 
 
@@ -12,11 +11,14 @@ function Home(){
 
     return (
         <div className="home">
-            <Navbar />
+
 
                 {categories.map((category, index)=><Card category={category} key={index}/>)}
 
-            <Footer/>
+
+
+
+
         </div>
     );
 }

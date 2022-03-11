@@ -10,3 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+button{
+    background-color:#F1654B;
+}
