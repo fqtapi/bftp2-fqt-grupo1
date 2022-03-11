@@ -1,26 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import {StockCatalog} from "./components/StockCatalog";
-import Prueba from "./components/Prueba";
+import NavBar from "./components/NavBar";
+import New from "./components/New";
+import Loguin from "./components/Loguin";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+
 
 ReactDOM.render(
-  <React.StrictMode>
-      <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<App />} />
-              <Route path="/stocks" element={<StockCatalog />} />
-              <Route path="/prueba" element={<Prueba />} />
-          </Routes>
-      </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <BrowserRouter>
+            <NavBar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/new" element={<New/>} />
+                <Route path="/loguin" element={<Loguin/>} />
+                <Route path="/stocks" element={<StockCatalog />} />
+                <Route path='*' element={<Navigate reaplace to="/" />} />
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
