@@ -5,8 +5,8 @@ function Footer(){
     return(
         <div className="footermenu">
             <div className='branding'>
-                <img src={logo} className="logo"/>
-                <p> © 2022 Fundacion quiero trabajo, todos los derechos reservados </p>
+                <img src={logo} className="img-logo"/>
+                <p>Fundación Quiero Trabajo © 2022 | Todos los Derechos Reservados </p>
             </div>
         </div>
     );

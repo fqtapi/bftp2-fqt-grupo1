@@ -1,13 +1,13 @@
 import React from 'react';
 import "./Card.css"
+import prendas from '../assets/img-cards/prendas.jpg';
 
-import {Link} from "react-router-dom";
 
 function Card({category, onClick}) {
     return (   <div className="stock-form" onClick={onClick}>
         <div className="card">
-            <img/>
-            <Link role="button" className="button" to="/stock-category">{category}</Link>
+            <img src={prendas} className="img-card" alt="prendas"/>
+            <button className="button">{category}</button>
 
         </div>
 

@@ -1,19 +1,19 @@
 
+.home {
+
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 40px;
+    display: grid;
+    gap: 3vw;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 1fr;
+    justify-items: center;
+
+}
+
 .home-section{
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 200px;
-    margin-bottom: 200px;
-    margin-left:500px;
-
-}
-
-.home{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 100px 100px;
-    grid-gap: 400px;
-    justify-items: center;
-
 }
