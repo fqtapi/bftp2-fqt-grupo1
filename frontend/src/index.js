@@ -18,9 +18,9 @@ ReactDOM.render(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/new" element={<New/>} />
-                <Route path="/loguin" element={<Login/>} />
+                <Route path="/login" element={<Login/>} />
                 <Route path="/stocks" element={<StockCatalog />} />
-                <Route path='*' element={<Navigate reaplace to="/" />} />
+                <Route path='*' element={<Navigate replace to="/" />} />
             </Routes>
             <Footer />
         </BrowserRouter>
