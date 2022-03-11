@@ -3,23 +3,20 @@ import Card from "../components/Card";
 import "./Home.css"
 
 
+function Home() {
 
-
-function Home(){
-
-    const categories =["Prendas", "Complementos", "Accesorios", "Cosméticos"]
+    const categories = ["Prendas", "Complementos", "Accesorios", "Cosméticos"]
 
     return (
-        <div className="home">
+        <section className="home-section">
+            <div className="home">
 
 
-                {categories.map((category, index)=><Card category={category} key={index}/>)}
+                {categories.map((category, index) => <Card category={category} key={index}/>)}
 
 
-
-
-
-        </div>
+            </div>
+        </section>
     );
 }
 
