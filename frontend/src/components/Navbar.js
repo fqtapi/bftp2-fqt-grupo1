@@ -14,14 +14,18 @@ function Navbar() {
         <>
             <NavContainer>
                 <div className='brand'>
-                    <img src={logo} className="fqtlogo"/>
-                    <h2>FUNDACION QUIERO TRABAJO</h2>
+                    <Link to="/">
+                        <div>
+                            <img className="logofqt" src={logo} alt={"Quiero Trabajo logo"}/>
+                            <h2>FUNDACION QUIERO TRABAJO</h2>
+                        </div>
+                    </Link>
+
                 </div>
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <div className={`links ${clicked ? 'active' : ''}`}>
-                        <Link  to="/">INICIO</Link>
-                        <Link  to="/new">NUEVO</Link>
-                        <Link to="/loguin">LOGUIN</Link>
+                        <Link  to="/new">AÑADIR NUEVO</Link>
+                        <Link to="/loguin">LOGIN</Link>
                     </div>
                 </div>
                 <div className='burguer'>
