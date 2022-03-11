@@ -1,17 +1,27 @@
 import React from 'react';
 import Card from "../components/Card";
 import "./Home.css"
+import {useNavigate} from "react-router-dom";
 
 
-function Home() {
+function Home({onCategoryClicked}) {
     const categories = ["Prendas", "Complementos", "Accesorios", "Cosméticos"]
+
+    const navigate = useNavigate();
 
     return (
         <section className="home-section">
             <div className="home">
 
 
-                {categories.map((category, index) => <Card category={category} key={index}/>)}
+                {categories.map((category, index) =>
+                    <Card
+                        category={category} key={index}
+                        onClick={() => {
+                            onCategoryClicked(category);
+                            navigate("/stocks")
+                        }}
+                    />)}
 
 
             </div>

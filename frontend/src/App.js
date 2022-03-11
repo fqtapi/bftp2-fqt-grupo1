@@ -10,14 +10,21 @@ import StockTable from "./stock/StockTable";
 
 function App() {
 
+    // GET /stocks?category={?}
+
+    const onCategoryClicked = (category) => {
+        console.log(category)
+        // guardar la categoria (useState)
+    }
+
     return (
         <BrowserRouter>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
                 <Route path="/new" element={<New/>} />
                 <Route path="/login" element={<Login/>} />
-                <Route path="/stocks" element={<StockTable />}/>
+                <Route path="/stocks" element={<StockTable stocks={[]}  />}/>
                 <Route path='*' element={<Navigate replace to="/" />} />
             </Routes>
             <Footer />
