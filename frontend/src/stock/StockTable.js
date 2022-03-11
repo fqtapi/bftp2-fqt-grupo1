@@ -1,6 +1,5 @@
 
-
-export const StockTable = ({stocks}) => {
+ const StockTable = ({stocks}) => {
     return <table>
         {stocks.map( stock =>
             <tr>
@@ -12,3 +11,5 @@ export const StockTable = ({stocks}) => {
         )}
     </table>
 }
+
+export default StockTable;
