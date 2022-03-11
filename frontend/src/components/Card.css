@@ -11,11 +11,18 @@
     justify-content: space-between;
 }
 
-button{
+.card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+}
+
+.button{
     background-color:#F1654B;
     border: none;
     color: white;
     padding: 15px 24px;
     text-align: center;
-    margin-bottom:30px;
+    margin-left:100px;
+    margin-bottom:40px;
+    width:150px;
 }

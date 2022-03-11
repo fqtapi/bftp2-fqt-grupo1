@@ -1,12 +1,17 @@
 import React from 'react';
 import "./Card.css"
 
+import {Link} from "react-router-dom";
+
 function Card({category}) {
-    return (
+    return (   <div className="stock-form">
         <div className="card">
             <img/>
-            <button>{category}</button>
+            <Link role="button" className="button" to="/stock-category">{category}</Link>
+
         </div>
+
+</div>
     );
 }
 

@@ -4,7 +4,6 @@ import "./Home.css"
 
 
 function Home() {
-
     const categories = ["Prendas", "Complementos", "Accesorios", "Cosméticos"]
 
     return (

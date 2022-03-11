@@ -9,6 +9,7 @@ import New from "./components/New";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import StockPrendas from "./stock/StockPrendas";
 
 
 ReactDOM.render(
@@ -20,6 +21,7 @@ ReactDOM.render(
                 <Route path="/new" element={<New/>} />
                 <Route path="/loguin" element={<Login/>} />
                 <Route path="/stocks" element={<StockCatalog />} />
+                <Route path="/stock-category" element={<StockPrendas/>}/>
                 <Route path='*' element={<Navigate reaplace to="/" />} />
             </Routes>
             <Footer />
