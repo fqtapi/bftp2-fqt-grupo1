@@ -36,14 +36,14 @@ public class SampleDataLoader {
                 new Stock(14L, "Complementos05", "Sujetadores", "Complementos",0),
                 new Stock(15L, "Complementos06", "Medias", "Complementos",0),
                 new Stock(16L, "Accesorios01", "Bisuteria", "Accesorios",0),
-                new Stock(17L, "Cosméticos01", "Desodorante", "Cosméticos", 0),
-                new Stock(18L, "Cosméticos02", "Crema hidratante facial", "Cosméticos",0),
-                new Stock(19L, "Cosméticos03", "Shampoo", "Cosméticos",0),
-                new Stock(20L, "Cosméticos04", "Mousse", "Cosméticos",0),
-                new Stock(21L, "Cosméticos05", "Laca-fijador", "Cosméticos",0),
-                new Stock(22L, "Cosméticos06", "Mascarilla de cabello", "Cosméticos",0),
-                new Stock(23L, "Cosméticos07", "Tinte Cabello", "Cosméticos",0),
-                new Stock(24L, "Cosméticos08", "Gel de baño", "Cosméticos",0)
+                new Stock(17L, "Cosméticos01", "Desodorante", "Cosmeticos", 0),
+                new Stock(18L, "Cosméticos02", "Crema hidratante facial", "Cosmeticos",0),
+                new Stock(19L, "Cosméticos03", "Shampoo", "Cosmeticos",0),
+                new Stock(20L, "Cosméticos04", "Mousse", "Cosmeticos",0),
+                new Stock(21L, "Cosméticos05", "Laca-fijador", "Cosmeticos",0),
+                new Stock(22L, "Cosméticos06", "Mascarilla de cabello", "Cosmeticos",0),
+                new Stock(23L, "Cosméticos07", "Tinte Cabello", "Cosmeticos",0),
+                new Stock(24L, "Cosméticos08", "Gel de baño", "Cosmeticos",0)
         ));
     }
 }
