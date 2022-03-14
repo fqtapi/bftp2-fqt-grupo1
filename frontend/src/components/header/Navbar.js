@@ -23,11 +23,9 @@ function Navbar() {
                 </div>
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <div className={`links ${clicked ? 'active' : ''}`}>
+
                         <Link to="/new">
                             <button>AÑADIR NUEVO</button>
-                        </Link>
-                        <Link to="/login">
-                            <button>LOGIN</button>
                         </Link>
                     </div>
                 </div>
@@ -51,8 +49,6 @@ const NavContainer = styled.nav`
 .flexBrand{
     display: flex;
     align-items: center;
-    
-    
 }       
     
   h2{
@@ -61,16 +57,16 @@ const NavContainer = styled.nav`
     font-size: 20px;
     vertical-align: middle ;
   }
-  button{
+  .btn-orange-add{
     background-color: #f1654b;
     color: white;
     border: 1px solid;
     width: auto;
-    heigh: 12px;
+    height: 12px;
     
   }
   button:hover{
-    ransform: scale(400);
+    transform: scale(400);
     background: #cc1010;
   }
   
@@ -93,15 +89,14 @@ const NavContainer = styled.nav`
     margin-right: auto;
     text-align: center;
     transition: all .5s ease;
+    
     a{
       color: white;
       font-size: 2rem;
       display: block;
     }
     
- botton{
  
- }
     
     @media(min-width: 768px){
       position: initial;
@@ -124,6 +119,7 @@ const NavContainer = styled.nav`
     left: 0;
     right: 0;
     text-align: center;
+    
     a{
       font-size: 2rem;
       margin-top: 1rem;

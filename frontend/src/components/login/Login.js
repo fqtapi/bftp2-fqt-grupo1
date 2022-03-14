@@ -1,11 +1,21 @@
 import './Login.css';
 
-function Login(){
-    return(
+function Login(props) {
+
+    const handleSubmit = () => {
+        props.onSuccessfulLogin();
+    }
+
+    return (
         <div className="footer">
 
-            <h1>Página de Login</h1>
-
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="userInput">User</label>
+                <input type="text"/>
+                <label htmlFor="passwordInput">Password</label>
+                <input type="password"/>
+                <input type="submit" />
+            </form>
         </div>
     );
 }

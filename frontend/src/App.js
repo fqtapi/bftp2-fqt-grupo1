@@ -14,6 +14,7 @@ function App() {
     const [category, setCategory]=useState([]);
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [stocks, setStocks] = useState([])
+    const [loggedIn, setLoggedIn] = useState(false);
 
 
 
@@ -44,19 +45,23 @@ function App() {
 
     }
 
-    return (
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
-                <Route path="/new" element={<New/>} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
-                <Route path='*' element={<Navigate replace to="/" />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-    );
+    if (loggedIn) {
+        return (
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
+                    <Route path="/new" element={<New/>} />
+                    <Route path="/login" element={<Login/>} />
+                    <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
+                    <Route path='*' element={<Navigate replace to="/" />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        );
+    }
+
+    return <Login onSuccessfulLogin={() => setLoggedIn(true)}/>
 }
 
 export default App;
