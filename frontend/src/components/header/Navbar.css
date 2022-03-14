@@ -1,0 +1,39 @@
+.logofqt{
+    height: 50px;
+    width: auto;
+}
+.flexBrand {
+    display: flex;
+    align-items: center;
+}
+
+
+
+h2 {
+
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+
+button {
+    min-width: 130px;
+    height: 40px;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 1px solid #222;
+    background: #f1654b;
+}
+button:hover {
+    background: white;
+    color: #f1654b ;
+}
+

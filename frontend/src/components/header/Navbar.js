@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
 import {Link} from "react-router-dom";
 import logo from "../../assets/logo/fqtlogo.png";
+import './Navbar.css';
 
 function Navbar() {
 
@@ -27,7 +28,7 @@ function Navbar() {
                             <button>AÑADIR NUEVO</button>
                         </Link>
                         <Link to="/login">
-                            <button>LOGIN</button>
+                          LOGIN
                         </Link>
                     </div>
                 </div>
@@ -44,35 +45,8 @@ export default Navbar
 
 const NavContainer = styled.nav`
 
-.logofqt{
-    height: 50px;
-    width: auto;
-    }
-.flexBrand{
-    display: flex;
-    align-items: center;
+     
     
-    
-}       
-    
-  h2{
-   
-    color: white;
-    font-size: 20px;
-    vertical-align: middle ;
-  }
-  button{
-    background-color: #f1654b;
-    color: white;
-    border: 1px solid;
-    width: auto;
-    heigh: 12px;
-    
-  }
-  button:hover{
-    ransform: scale(400);
-    background: #cc1010;
-  }
   
   padding: .4rem;
   background-color: #333;
@@ -138,7 +112,7 @@ const NavContainer = styled.nav`
 `
 
 const BgDiv = styled.div`
-  background-color: #222;
+  background-color: white;
   position: absolute;
   top: -1000px;
   left: -1000px;
