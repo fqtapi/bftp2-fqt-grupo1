@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import logo from "../assets/logo/loguito.png";
+import logo from "../../assets/logo/loguito.png";
 
 function Footer(){
     return(
@@ -22,7 +22,7 @@ function Footer(){
                     </div>
                 </div>
                 <p className="copyright">
-                    Copyright &copy;2022 Fundacion quiero trabajo | Todos los derechos reservados
+                    Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos Reservados
                 </p>
 
 

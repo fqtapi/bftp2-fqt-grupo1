@@ -1,3 +1,4 @@
+import React from "react";
 
  const StockTable = ({stocks}) => {
     return <table>
