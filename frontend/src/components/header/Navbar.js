@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
 import {Link} from "react-router-dom";
@@ -15,21 +15,24 @@ function Navbar() {
             <NavContainer>
                 <div className='brand'>
                     <Link to="/">
-                        <div>
+                        <div className='flexBrand'>
                             <img className="logofqt" src={logo} alt={"Quiero Trabajo logo"}/>
-                            <h2>FUNDACION QUIERO TRABAJO</h2>
                         </div>
                     </Link>
 
                 </div>
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <div className={`links ${clicked ? 'active' : ''}`}>
-                        <Link  to="/new"><button>AÑADIR NUEVO</button></Link>
-                        <Link to="/login"><button>LOGIN</button></Link>
+                        <Link to="/new">
+                            <button>AÑADIR NUEVO</button>
+                        </Link>
+                        <Link to="/login">
+                            <button>LOGIN</button>
+                        </Link>
                     </div>
                 </div>
                 <div className='burguer'>
-                    <BurguerButton clicked={clicked} handleClick={handleClick} />
+                    <BurguerButton clicked={clicked} handleClick={handleClick}/>
                 </div>
                 <BgDiv className={`initial ${clicked ? ' active' : ''}`}/>
             </NavContainer>
@@ -40,13 +43,37 @@ function Navbar() {
 export default Navbar
 
 const NavContainer = styled.nav`
-  h2{
-    color: white;
-    font-weight: 400;
-    span{
-      font-weight: bold;
+
+.logofqt{
+    height: 50px;
+    width: auto;
     }
+.flexBrand{
+    display: flex;
+    align-items: center;
+    
+    
+}       
+    
+  h2{
+   
+    color: white;
+    font-size: 20px;
+    vertical-align: middle ;
   }
+  button{
+    background-color: #f1654b;
+    color: white;
+    border: 1px solid;
+    width: auto;
+    heigh: 12px;
+    
+  }
+  button:hover{
+    ransform: scale(400);
+    background: #cc1010;
+  }
+  
   padding: .4rem;
   background-color: #333;
   display: flex;
@@ -71,6 +98,11 @@ const NavContainer = styled.nav`
       font-size: 2rem;
       display: block;
     }
+    
+ botton{
+ 
+ }
+    
     @media(min-width: 768px){
       position: initial;
       margin: 0;
