@@ -9,7 +9,7 @@ function Footer(){
             <div className='branding'>
                 <div className="inner-footer">
                     <div className="footer-text">
-                        <img src={logo} className="logo"/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore possimus labore dignissimos quia qui ad eum, laudantium cum dolores dolorem ipsam placeat voluptate atque culpa nostrum exercitationem dicta quo a!
+                        <img src={logo} className="logo"/>  FUNDACION QUIERO TRABAJO
                     </div>
                     <div className="contact">
                         <ul className="icons">
