@@ -57,16 +57,12 @@ const NavContainer = styled.nav`
     font-size: 20px;
     vertical-align: middle ;
   }
-  .btn-orange-add{
-    background-color: #f1654b;
-    color: white;
-    border: 1px solid;
-    width: auto;
-    height: 12px;
-    
+  .button{
+    width: 100px;
+    border-radius: 5px;
   }
+  
   button:hover{
-    transform: scale(400);
     background: #cc1010;
   }
   

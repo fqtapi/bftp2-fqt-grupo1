@@ -10,8 +10,7 @@ import StockTable from "./table/StockTable";
 
 function App() {
 
-    // GET /stocks?category={?}
-    const [category, setCategory]=useState([]);
+
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [stocks, setStocks] = useState([])
     const [loggedIn, setLoggedIn] = useState(false);
