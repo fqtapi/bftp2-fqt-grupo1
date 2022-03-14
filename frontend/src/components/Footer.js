@@ -22,7 +22,7 @@ function Footer(){
                     </div>
                 </div>
                 <p className="copyright">
-                    Copyright &copy;2022 Fundcion quiero trabajo | Todos los derechos reservados
+                    Copyright &copy;2022 Fundacion quiero trabajo | Todos los derechos reservados
                 </p>
 
 
