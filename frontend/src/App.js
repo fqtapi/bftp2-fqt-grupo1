@@ -1,12 +1,12 @@
 import './App.css';
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
+import Home from "./home/Home";
+import Navbar from "./components/header/Navbar";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import New from "./components/New";
-import Login from "./components/Login";
-import Footer from "./components/Footer";
+import New from "./components/forms/New";
+import Login from "./components/login/Login";
+import Footer from "./components/footer/Footer";
 import React, {useState} from "react";
-import StockTable from "./stock/StockTable";
+import StockTable from "./table/StockTable";
 
 function App() {
 

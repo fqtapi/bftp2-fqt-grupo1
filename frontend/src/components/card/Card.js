@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Card.css"
-import prendas from '../assets/img-cards/prendas.jpg';
+import prendas from '../../assets/img-cards/prendas.jpg';
 
 
 function Card({category, onClick}) {

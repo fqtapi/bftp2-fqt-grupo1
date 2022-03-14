@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
 import {Link} from "react-router-dom";
-import logo from "../assets/logo/fqtlogo.png";
+import logo from "../../assets/logo/fqtlogo.png";
 
 function Navbar() {
 
