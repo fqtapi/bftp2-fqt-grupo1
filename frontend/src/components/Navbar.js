@@ -25,7 +25,7 @@ function Navbar() {
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <div className={`links ${clicked ? 'active' : ''}`}>
                         <Link  to="/new">AÑADIR NUEVO</Link>
-                        <Link to="/loguin">LOGIN</Link>
+                        <Link to="/login">LOGIN</Link>
                     </div>
                 </div>
                 <div className='burguer'>

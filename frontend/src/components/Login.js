@@ -3,7 +3,9 @@ import './Login.css';
 function Login(){
     return(
         <div className="footer">
-            <h1>Pagina de Login</h1>
+
+            <h1>Página de Login</h1>
+
         </div>
     );
 }
