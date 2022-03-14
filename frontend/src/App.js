@@ -12,10 +12,26 @@ function App() {
 
     // GET /stocks?category={?}
     const [category, setCategory]=useState([]);
+    const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [stocks, setStocks] = useState([])
+
+
+
+
+    const addStocks = (stocks) => {
+        return fetch("http://localhost:8081/new"),
+            {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(stocks)
+            }
+    .then(_ => setRequiresUpdate(true))
+
+    }
 
     const onCategoryClicked = (category) => {
         console.log(category)
+
 
         // guardar la categoría (useState)
 

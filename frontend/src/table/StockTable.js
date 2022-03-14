@@ -30,9 +30,10 @@ const StockTable = ({stocks, stockEdit}) => {
                                 <td className="category-td">{stock.descripcion}</td>
                                 <td className="category-td">{stock.category}</td>
                                 <td className="category-td">{stock.cantidad}</td>
-                                <td className="category-td-link"><Link to="/stocks/new" state={{data: stockEdit}}>
-                                    <FaEdit />
-                                </Link>
+                                <td className="category-td-link">
+                                    <Link className="btn-orange-link" to="/new"
+                                          state={{data: stockEdit}}><FaEdit fixedWidth style={{ color: 'red' }} /></Link>
+
                                 </td>
                                 </tr>
                         )}
