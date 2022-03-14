@@ -19,7 +19,7 @@ function App() {
 
         // guardar la categoría (useState)
 
-        fetch(`http://localhost:8081/stocks`)
+        fetch(`http://localhost:8081/stocks?category=${category}`)
             .then(r => r.json())
             .then(datos => setStocks(datos))
 
