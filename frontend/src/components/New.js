@@ -1,9 +1,10 @@
-
-
-function New(){
-    return(
+function New() {
+    return (
         <div className="new">
-            <h1>PAGINA AÑADIR NUEVOS PRODUCTOS</h1>
+            <h1>AÑADIR ARTÍCULO NUEVO</h1>
+            <form className="add-form">
+                <label>Código</label>
+            </form>
         </div>
     );
 }
