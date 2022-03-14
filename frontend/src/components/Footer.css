@@ -1,8 +1,34 @@
-.branding {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2%;
+hr {
+    background-color: #404040;
+
 }
-.img-logo {
-    margin-right: 50%;
+.logo{
+    width: 120px;
+    height: auto;
+}
+
+
+.inner-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 3em;
+}
+
+.footer-text{
+    width:40%
+}
+.contact{
+    margin-right: 3em;
+
+}
+
+.copyright{
+    background-color: white;
+    text-align: center;
+    padding:1em
+}
+
+p{
+    color: #000000;
 }
