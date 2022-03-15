@@ -1,17 +1,16 @@
 import React from "react";
 import "./Table.css";
-import { FaEdit } from 'react-icons/fa';
+import {FaEdit} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
 const StockTable = ({stocks, stockEdit}) => {
 
 
-
     return (
 
 
-    <div className="table-container">
-        <h1 className="categoryList-title">Lista</h1>
+        <div className="table-container">
+            <h1 className="categoryList-title">Lista</h1>
 
             <section className='categoryList'>
                 <div className='table-list'>
@@ -32,10 +31,10 @@ const StockTable = ({stocks, stockEdit}) => {
                                 <td className="category-td">{stock.cantidad}</td>
                                 <td className="category-td-link">
                                     <Link className="btn-orange-link" to="/new"
-                                          state={{data: stockEdit}}><FaEdit fixedWidth style={{ color: 'red' }} /></Link>
+                                          state={{data: stockEdit}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
 
                                 </td>
-                                </tr>
+                            </tr>
                         )}
                     </table>
                 </div>

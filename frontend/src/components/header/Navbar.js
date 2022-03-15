@@ -11,6 +11,7 @@ function Navbar() {
     const handleClick = () => {
         setClicked(!clicked)
     }
+
     return (
         <>
             <NavContainer>
@@ -27,9 +28,7 @@ function Navbar() {
                         <Link to="/new">
                             <button>AÑADIR NUEVO</button>
                         </Link>
-                        <Link to="/login">
-                          LOGIN
-                        </Link>
+
                     </div>
                 </div>
                 <div className='burguer'>

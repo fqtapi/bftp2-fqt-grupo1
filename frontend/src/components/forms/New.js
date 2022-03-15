@@ -8,9 +8,10 @@ function New() {
     const data = location.state ? location.state.data : null;
 
     const [datos, setDatos] = useState(data || {
-        category: '',
+
         codigo: '',
         descripcion: '',
+        category: '',
         cantidad: ''
     })
     const handleInputChange = (event) => {
@@ -19,6 +20,8 @@ function New() {
             [event.target.name]: event.target.value
         })
     }
+
+
 
     return (
         <div className="new">
