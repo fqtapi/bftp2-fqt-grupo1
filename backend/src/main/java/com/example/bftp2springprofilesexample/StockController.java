@@ -8,7 +8,7 @@ import java.util.Map;
 @RequestMapping("/stocks")
 @RestController
 public class StockController {
-    private StockRepository stockRepository;
+    private final StockRepository stockRepository;
 
     @Autowired
     public StockController(StockRepository stockRepository) {
