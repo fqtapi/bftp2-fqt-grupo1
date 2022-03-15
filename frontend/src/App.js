@@ -52,7 +52,7 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
-                    <Route path="/new" element={<New/>} />
+                    <Route path="/new" element={<New stocks={stocks} />} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
                     <Route path='*' element={<Navigate replace to="/" />} />

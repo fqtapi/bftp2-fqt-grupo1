@@ -3,11 +3,9 @@ import "./New.css"
 import {useLocation} from "react-router-dom";
 
 
-function New() {
-    const location = useLocation();
-    const data = location.state ? location.state.data : null;
+function New(props) {
 
-    const [datos, setDatos] = useState(data || {
+    const [datos, setDatos] = useState(props.stocks || {
         category: '',
         codigo: '',
         descripcion: '',
@@ -20,14 +18,21 @@ function New() {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setDatos('');
+    }
+
     return (
         <div className="new">
             <h1>EDITAR ARTÍCULO</h1>
-            <form className="add-form">
+            <form className="add-form" onSubmit={handleSubmit}>
                 <div className="content-form">
                     <div className="form-group">
-                        <label>Categoría
+                        <label for="category">Categoría
                             <input
+                                value={datos.category}
+                                id="category"
                                 type="text"
                                 name="category"
                                 onChange={handleInputChange}
@@ -35,8 +40,10 @@ function New() {
                         </label>
                     </div>
                     <div className="form-group">
-                        <label>Código
+                        <label for="codigo">Código
                             <input
+                                value={datos.codigo}
+                                id="codigo"
                                 type="text"
                                 name="codigo"
                                 onChange={handleInputChange}
@@ -45,8 +52,10 @@ function New() {
                         </label>
                     </div>
                     <div className="form-group">
-                        <label>Descripción
+                        <label for="descripcion">Descripción
                             <input
+                                value={datos.descripcion}
+                                id="descripcion"
                                 type="text"
                                 name="descripcion"
                                 onChange={handleInputChange}
@@ -55,8 +64,10 @@ function New() {
                     </div>
                     <div className="form-group">
 
-                        <label>Cantidad
+                        <label for="cantidad">Cantidad
                             <input
+                                value={datos.cantidad}
+                                id="cantidad"
                                 type="text"
                                 name="cantidad"
                                 onChange={handleInputChange}
