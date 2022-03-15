@@ -20,7 +20,7 @@ const StockTable = ({stocks}) => {
                             <th className='stock-th'>Descripcion</th>
                             <th className='stock-th'>Category</th>
                             <th className='stock-th'>Cantidad</th>
-                            <th className='stock-th'>Añadir/Eliminar</th>
+                            <th className='stock-th'>Modificar</th>
                         </tr>
 
                         {stocks.map(stock =>
