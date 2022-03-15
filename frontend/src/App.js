@@ -14,6 +14,7 @@ function App() {
     const [category, setCategory]=useState([]);
     const [stocks, setStocks] = useState([])
 
+
     const onCategoryClicked = (category) => {
         console.log(category)
 
@@ -28,12 +29,13 @@ function App() {
 
     }
 
+
     return (
         <BrowserRouter>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
-                <Route path="/new" element={<New/>} />
+                <Route path="/new" element={<New />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
                 <Route path='*' element={<Navigate replace to="/" />} />
