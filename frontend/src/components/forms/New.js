@@ -29,8 +29,8 @@ function New(props) {
             <form className="add-form" onSubmit={handleSubmit}>
                 <div className="content-form">
                     <div className="form-group">
-                        <label for="category">Categoría
-                            <input
+                        <label className="new-label" for="category">Categoría
+                            <input className="new-input"
                                 value={datos.category}
                                 id="category"
                                 type="text"
@@ -40,8 +40,8 @@ function New(props) {
                         </label>
                     </div>
                     <div className="form-group">
-                        <label for="codigo">Código
-                            <input
+                        <label className="new-label" for="codigo">Código
+                            <input className="new-input"
                                 value={datos.codigo}
                                 id="codigo"
                                 type="text"
@@ -52,8 +52,8 @@ function New(props) {
                         </label>
                     </div>
                     <div className="form-group">
-                        <label for="descripcion">Descripción
-                            <input
+                        <label className="new-label" for="descripcion">Descripción
+                            <input className="new-input"
                                 value={datos.descripcion}
                                 id="descripcion"
                                 type="text"
@@ -64,8 +64,8 @@ function New(props) {
                     </div>
                     <div className="form-group">
 
-                        <label for="cantidad">Cantidad
-                            <input
+                        <label className="new-label" for="cantidad">Cantidad
+                            <input className="new-input"
                                 value={datos.cantidad}
                                 id="cantidad"
                                 type="text"
