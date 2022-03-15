@@ -3,7 +3,7 @@ import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
-const StockTable = ({stocks, stockEdit}) => {
+const StockTable = ({stocks}) => {
 
 
     return (
@@ -24,14 +24,14 @@ const StockTable = ({stocks, stockEdit}) => {
                         </tr>
 
                         {stocks.map(stock =>
-                            <tr className='category-table-row' key={stock.id}>
+                            <tr className='category-table-row' key={stock.id} stock={stock}>
                                 <td className="category-td">{stock.codigo}</td>
                                 <td className="category-td">{stock.descripcion}</td>
                                 <td className="category-td">{stock.category}</td>
                                 <td className="category-td">{stock.cantidad}</td>
                                 <td className="category-td-link">
                                     <Link className="btn-orange-link" to="/new"
-                                          state={{data: stockEdit}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
+                                          state={{data: stock}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
 
                                 </td>
                             </tr>

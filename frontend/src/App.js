@@ -5,7 +5,7 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {New} from "./components/forms/New";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import StockTable from "./table/StockTable";
 
 
@@ -17,16 +17,24 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(false);
 
 
+    useEffect(() => {
+        if (requiresUpdate) {
+            return fetch("http://localhost:8081/stocks")
+                .then(r => r.json())
+                .then(setStocks)
+            .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+
 
     const addStock = (stock) => {
-        return fetch("http://localhost:8081"),
+        return fetch("http://localhost:8081/stocks",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(stock)
             }
-    .then(_ => setRequiresUpdate(true))
-
+        ).then(_ => setRequiresUpdate(true))
     }
 
 
@@ -43,15 +51,15 @@ function App() {
     if (loggedIn) {
         return (
             <BrowserRouter>
-                <Navbar />
+                <Navbar/>
                 <Routes>
-                    <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
-                    <Route path="/new" element={<New stocks={stocks} />} />
-                    <Route path="/login" element={<Login/>} />
-                    <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
-                    <Route path='*' element={<Navigate replace to="/" />} />
+                    <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
+                    <Route path="/new" element={<New addStock={addStock}/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/stocks" element={<StockTable stocks={stocks}/>}/>
+                    <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
-                <Footer />
+                <Footer/>
             </BrowserRouter>
         );
     }

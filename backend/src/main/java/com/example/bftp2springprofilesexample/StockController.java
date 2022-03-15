@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
+
 @RequestMapping("/stocks")
 @RestController
 public class StockController {
@@ -24,18 +24,28 @@ public class StockController {
         }
         return stockRepository.findAll();
     }
-
     @PostMapping
-    public Stock createStock(@RequestBody Stock stock) {
+    public Stock addStock(@RequestBody Stock stock) {
         return stockRepository.save(stock);
     }
+
+    @GetMapping("/{id}")
+    public Stock findStock(@PathVariable Long id){
+        return stockRepository.findById(id).orElseThrow(null);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public Stock deleteStockById(@PathVariable Long id) {
+        Stock stock = stockRepository.findById(id).orElseThrow(StockNotFoundException::new);
+        stockRepository.deleteById(id);
+        return stock;
+    }
+
     @PutMapping("/{id}")
     public Stock updateStock(@RequestBody Stock stock) {
-        stockRepository.findById(stock.getId()).orElseThrow(ExperienceNotFoundException::new);
+        stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
         return stockRepository.save(stock);
     }
-
-
 }
 
 
