@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./New.css"
+import {useLocation} from "react-router-dom";
 
 
 function New() {
+    const location = useLocation();
+    const data = location.state ? location.state.data : null;
 
+    const [datos, setDatos] = useState(data || {
+        category: '',
+        codigo: '',
+        descripcion: '',
+        cantidad: ''
+    })
+    const handleInputChange = (event) => {
+        setDatos({
+            ...datos,
+            [event.target.name]: event.target.value
+        })
+    }
 
     return (
         <div className="new">
@@ -15,7 +30,7 @@ function New() {
                             <input
                                 type="text"
                                 name="category"
-
+                                onChange={handleInputChange}
                             />
                         </label>
                     </div>
@@ -24,7 +39,7 @@ function New() {
                             <input
                                 type="text"
                                 name="codigo"
-
+                                onChange={handleInputChange}
                             />
 
                         </label>
@@ -34,7 +49,7 @@ function New() {
                             <input
                                 type="text"
                                 name="descripcion"
-
+                                onChange={handleInputChange}
                             />
                         </label>
                     </div>
@@ -44,11 +59,11 @@ function New() {
                             <input
                                 type="text"
                                 name="cantidad"
-
+                                onChange={handleInputChange}
                             />
                         </label>
                     </div>
-                    <button className="new-button">Guardar</button>
+                    <button className="new-button" type="submit">Guardar</button>
                 </div>
             </form>
         </div>

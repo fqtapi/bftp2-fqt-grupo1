@@ -46,21 +46,6 @@ function App() {
     }
 
 
-
-    return (
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>} />
-                <Route path="/new" element={<New />} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/stocks" element={<StockTable stocks={stocks}  />}/>
-                <Route path='*' element={<Navigate replace to="/" />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-    );
-
     if (loggedIn) {
         return (
             <BrowserRouter>
