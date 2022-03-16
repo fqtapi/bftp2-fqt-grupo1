@@ -2,13 +2,13 @@ import React from 'react';
 import './Footer.css';
 import logo from "../../assets/logo/loguito.png";
 
-function Footer(){
-    return(
+function Footer() {
+    return (
         <div className="footer-menu">
             <div className='branding'>
                 <div className="inner-footer">
                     <div className="footer-text">
-                        <img src={logo} className="logo"/>  FUNDACION QUIERO TRABAJO
+                        <img src={logo} className="logo"/> FUNDACION QUIERO TRABAJO
                     </div>
                     <div className="contact">
                         <ul className="icons">
@@ -20,12 +20,10 @@ function Footer(){
                         </ul>
                     </div>
                 </div>
-                <p className="copyright">
-                    Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos Reservados
-                </p>
-
-
             </div>
+            <p className="copyright">
+                Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos Reservados
+            </p>
         </div>
     );
 }
