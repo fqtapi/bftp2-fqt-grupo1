@@ -3,6 +3,10 @@
     font-family: "Roboto Light", sans-serif;
 }
 
+h1{
+    text-align: center;
+    margin-top: 30px;
+}
 .table-list {
     border-radius: 20px;
 }

@@ -10,7 +10,7 @@ const StockTable = ({stocks}) => {
 
 
         <div className="table-container">
-            <h1 className="categoryList-title">Lista</h1>
+            <h1 className="categoryList-title">Stock</h1>
 
             <section className='categoryList'>
                 <div className='table-list'>
