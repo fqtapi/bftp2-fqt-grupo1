@@ -52,6 +52,7 @@ function App() {
         return (
             <BrowserRouter>
                 <Navbar/>
+                <div className="body-section">
                 <Routes>
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
@@ -60,6 +61,7 @@ function App() {
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
                 <Footer/>
+                </div>
             </BrowserRouter>
         );
     }
