@@ -2,3 +2,14 @@
     padding: 0;
     margin: 0;
 }
+Navbar{
+    height: 20%;
+}
+
+Footer{
+    height: 20%;
+
+}
+.body-section{
+    height: 80%;
+}

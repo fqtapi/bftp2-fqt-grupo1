@@ -1,31 +1,26 @@
-.logo{
-    width: 120px;
-    height: auto;
-}
-
-
-.inner-footer{
+.footer{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 2em 3em;
+    justify-content: space-evenly;
     background-color: #EFEFEF;
-
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 20%;
 }
 
-.footer-text{
-    width:40%
+.wide{
+    width: 60%;
+    align-items: center;
+    justify-content: center;
 }
-.contact{
-    margin-right: 3em;
-
+.thin{
+    width: 20%;
 }
 
-.copyright{
-    text-align: center;
-    padding:1em;
-    background-color: #EFEFEF;
-    color: black;
+.thin img {
+    height: inherit;
 }
 
 p{

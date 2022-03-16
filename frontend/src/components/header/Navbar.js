@@ -13,7 +13,7 @@ function Navbar() {
     }
 
     return (
-        <>
+        <div className= "navbar">
             <NavContainer>
                 <div className='brand'>
                     <Link to="/">
@@ -36,7 +36,7 @@ function Navbar() {
                 </div>
                 <BgDiv className={`initial ${clicked ? ' active' : ''}`}/>
             </NavContainer>
-        </>
+        </div>
     )
 }
 
