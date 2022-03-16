@@ -36,6 +36,10 @@
     height: 30px;
     border-radius: 5px;
     margin-bottom: 20px;
+    border: 1px solid #ccc7c7;
+    background-color: #ccc7c7;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .css-button-rounded--red {

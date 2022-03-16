@@ -26,7 +26,7 @@ function Navbar() {
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <div className={`links ${clicked ? 'active' : ''}`}>
                         <Link to="/new">
-                            <button>AÑADIR NUEVO</button>
+                            <button className="css-button-rounded--red">Añadir Nuevo</button>
                         </Link>
 
                     </div>
@@ -44,29 +44,14 @@ export default Navbar
 
 const NavContainer = styled.nav`
 
-     
-    
-
-  h2{
-   
-    color: white;
-    font-size: 20px;
-    vertical-align: middle ;
-  }
-  .button{
-    width: 100px;
-    border-radius: 5px;
-  }
-  
-  button:hover{
-    background: #cc1010;
-  }
-  
   padding: .4rem;
-  background-color: #333;
+  background-color: #EFEFEF;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    border: 1px solid #ccc7c7;
   a{
     color: white;
     text-decoration: none;
@@ -87,10 +72,7 @@ const NavContainer = styled.nav`
       display: block;
     }
     
- botton{
- 
- }
-    
+   
     @media(min-width: 768px){
       position: initial;
       margin: 0;

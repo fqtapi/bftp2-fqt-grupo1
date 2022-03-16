@@ -8,32 +8,26 @@
 }
 
 
-
-h2 {
-
-    color: white;
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-
-
-button {
+.css-button-rounded--red {
     min-width: 130px;
     height: 40px;
-    color: white;
+    text-align-last: center;
+    font-family: "Roboto Light", sans-serif;
+    color: #fff;
     padding: 5px 10px;
     font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
     outline: none;
-    border: 1px solid #222;
-    background: #f1654b;
-}
-button:hover {
-    background: white;
-    color: #f1654b ;
+    border-radius: 5px;
+    border: 2px solid #F1654B;
+    background: #F1654B;
 }
 
+.css-button-rounded--red:hover {
+    background: #fff;
+    color: #F1654B
+}

@@ -8,14 +8,15 @@
 }
 
 .category-table {
-
+    text-align: center;
     box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, .5), 7px 7px 20px 0 rgba(0, 0, 0, .1), 4px 4px 5px 0 rgba(0, 0, 0, .1);
 }
 
-i{
-
+i {
+width: 150px;
 
 }
+
 .category-table table {
     width: 100%;
     font-size: 12px;
@@ -67,7 +68,7 @@ i{
 .category-td-link {
     padding: 8px;
     font-family: "Roboto Light", sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     border-bottom: 1px solid rgba(0, 0, 0, .3);
     color: #000000;
     border-top: 1px solid transparent;

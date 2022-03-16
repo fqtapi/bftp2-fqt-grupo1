@@ -3,7 +3,6 @@ import "./New.css"
 import {useLocation, useNavigate} from "react-router-dom";
 
 
-
 export const New = (props) => {
 
     let navigate = useNavigate();
@@ -31,57 +30,62 @@ export const New = (props) => {
 
 
     return (
-        <div className="new">
-            <h1>{data ? 'Modificar Artículo' : 'Agregar Nuevo Artículo'}</h1>
-            <form className="add-form" onSubmit={enviarDatos} action="">
-                <div className="content-form">
-                    <div className="form-group">
-                        <div className="form-group">
-                            <label htmlFor="">Código</label>
-                            <input type="text"
-                                   className="new-input"
-                                   value={datos.codigo}
-                                   onChange={handleInputChange}
-                                   id="codigo"
-                                   name="codigo"/>
-                        </div>
+        <div className='section-form-stock'>
+            <section className="stock-form-section">
+                <div className="stock-form-wrapper">
 
-                        <div className="form-group">
-                            <label htmlFor="">Descripción</label>
-                            <input type="text"
-                                   className="new-input"
-                                   value={datos.descripcion}
-                                   onChange={handleInputChange}
-                                   id="descripcion"
-                                   name="descripcion"/>
-                        </div>
+                    <h1>{data ? 'Modificar Artículo' : 'Agregar Nuevo Artículo'}</h1>
+                    <div className="stock-form-container">
+                        <form className="edit-stock-form" onSubmit={enviarDatos} action="">
 
-                        <div className="form-group">
-                            <label htmlFor="">Categoría</label>
-                            <input type="text"
-                                   className="new-input"
-                                   value={datos.category}
-                                   onChange={handleInputChange}
-                                   id="category"
-                                   name="category"/>
-                        </div>
+                            <div className="stock-form-group">
+                                <label htmlFor="">Código</label>
+                                <input type="text"
+                                       className="stock-form-control"
+                                       value={datos.codigo}
+                                       onChange={handleInputChange}
+                                       id="codigo"
+                                       name="codigo"/>
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="">Cantidad</label>
-                            <input type="text"
-                                   className="new-input"
-                                   value={datos.cantidad}
-                                   onChange={handleInputChange}
-                                   id="cantidad"
-                                   name="cantidad"/>
-                        </div>
-                        <div className="btn-edit-container">
-                            <button type="submit" className="new-button">Guardar</button>
-                        </div>
+                            <div className="stock-form-group">
+                                <label htmlFor="">Descripción</label>
+                                <input type="text"
+                                       className="stock-form-control"
+                                       value={datos.descripcion}
+                                       onChange={handleInputChange}
+                                       id="descripcion"
+                                       name="descripcion"/>
+                            </div>
 
+                            <div className="stock-form-group">
+                                <label htmlFor="">Categoría</label>
+                                <input type="text"
+                                       className="stock-form-control"
+                                       value={datos.category}
+                                       onChange={handleInputChange}
+                                       id="category"
+                                       name="category"/>
+                            </div>
+
+                            <div className="stock-form-group">
+                                <label htmlFor="">Cantidad</label>
+                                <input type="text"
+                                       className="stock-form-control"
+                                       value={datos.cantidad}
+                                       onChange={handleInputChange}
+                                       id="cantidad"
+                                       name="cantidad"/>
+                            </div>
+
+                            <div className="btn-edit-container">
+                                <button type="submit" className="css-button-rounded--red">Guardar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
+
+            </section>
         </div>
     );
 }

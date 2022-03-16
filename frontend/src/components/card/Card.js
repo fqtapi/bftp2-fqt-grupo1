@@ -7,7 +7,7 @@ function Card({category, onClick}) {
     return (   <div className="stock-form">
         <div className="card" onClick={onClick}>
             <img src={prendas} className="img-card" alt="prendas"/>
-            <button className="button" onClick={onClick}>{category}</button>
+            <button className="css-button-rounded--red" onClick={onClick}>{category}</button>
 
         </div>
 
