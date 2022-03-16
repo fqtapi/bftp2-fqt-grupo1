@@ -1,26 +1,37 @@
 .footer{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     background-color: #EFEFEF;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
-    height: 20%;
+
 }
 
 .wide{
     width: 60%;
     align-items: center;
-    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 80px 0;
 }
 .thin{
     width: 20%;
+    display: flex;
 }
 
 .thin img {
-    height: inherit;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.thin h4{
+    width: 20px;
+}
+
+.thinner {
+    width: 20%;
 }
 
 p{
@@ -28,4 +39,14 @@ p{
 }
 ul {
     list-style: none;
+}
+
+@media(max-width:950px) {
+    .footer {
+        flex-wrap: wrap;
+    }
+
+    .wide {
+        width: 40%;
+    }
 }

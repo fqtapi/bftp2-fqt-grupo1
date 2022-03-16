@@ -13,7 +13,7 @@ function Footer() {
             <div className="wide">
                 <p> Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos Reservados </p>
             </div>
-            <div className="thin">
+            <div className="thinner">
                 <ul>
                     <h3>OFICINA BARCELONA</h3>
                     <li>Ronda Sant Pere 44, Entresuelo 2ª</li>
