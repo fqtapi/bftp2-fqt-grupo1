@@ -10,7 +10,7 @@ const StockTable = ({stocks}) => {
 
 
         <div className="table-container">
-            <h1 className="categoryList-title">Lista</h1>
+            <h1 className="categoryList-title">Lista de Productos</h1>
 
             <section className='categoryList'>
                 <div className='table-list'>
@@ -28,7 +28,7 @@ const StockTable = ({stocks}) => {
                                 <td className="category-td">{stock.codigo}</td>
                                 <td className="category-td">{stock.descripcion}</td>
                                 <td className="category-td">{stock.category}</td>
-                                <td className="category-td" style={ stock.cantidad === 0 ? {fontSize: 25, color: "red"} : {}}>{stock.cantidad}</td>
+                                <td className="category-td" style={stock.cantidad === 0 ? {fontSize: 25, color: "red"} : {}}>{stock.cantidad}</td>
                                 <td className="category-td-link">
                                     <Link className="btn-orange-link" to="/new"
                                           state={{data: stock}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
