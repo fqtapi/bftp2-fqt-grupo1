@@ -4,8 +4,7 @@ import logo from "../../assets/logo/loguito.png";
 
 function Footer(){
     return(
-        <div className="footermenu">
-            <hr/>
+        <div className="footer-menu">
             <div className='branding'>
                 <div className="inner-footer">
                     <div className="footer-text">

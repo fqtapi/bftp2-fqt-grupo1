@@ -1,6 +1,7 @@
 .logofqt{
     height: 50px;
     width: auto;
+    margin-top: 30px;
 }
 .flexBrand {
     display: flex;
@@ -25,6 +26,9 @@
     border-radius: 5px;
     border: 2px solid #F1654B;
     background: #F1654B;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .css-button-rounded--red:hover {
