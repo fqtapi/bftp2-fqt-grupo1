@@ -9,7 +9,9 @@ public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Lob
     private String codigo;
+    @Lob
     private String descripcion;
     private String category;
     private int cantidad;
