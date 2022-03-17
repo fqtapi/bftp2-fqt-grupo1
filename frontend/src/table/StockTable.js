@@ -26,7 +26,7 @@ const StockTable = (
                         <th className='stock-th'>Modificar</th>
                     </tr>
 
-                    {stocks.map((stock =>
+                    {stocks.map[stock =>
                         <tr className='category-table-row' key={stock.id} stock={stock}>
                             <td className="category-td">{stock.codigo}</td>
                             <td className="category-td">{stock.descripcion}</td>
@@ -37,8 +37,8 @@ const StockTable = (
                                       state={{data: stock}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
                             </td>
                         </tr>
-                        )
-                    )}
+
+                    ]}
                 </div>
             </section>
         </div>
