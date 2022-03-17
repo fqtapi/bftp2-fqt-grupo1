@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/stocks")
+@RequestMapping("/api/stocks")
 @RestController
 public class StockController {
     private final StockRepository stockRepository;

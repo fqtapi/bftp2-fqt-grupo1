@@ -7,10 +7,12 @@ import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import React, {useEffect, useState} from "react";
 import StockTable from "./table/StockTable";
+import StocksApi from "./apis/StocksApi";
 
 
 function App() {
 
+    const stocksApi = new StocksApi();
 
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [stocks, setStocks] = useState([])
@@ -19,8 +21,7 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            return fetch("http://localhost:8081/stocks")
-                .then(r => r.json())
+            return stocksApi.getStocks()
                 .then(setStocks)
             .then(_ => setRequiresUpdate(false));
         }
@@ -28,21 +29,12 @@ function App() {
 
 
     const addStock = (stock) => {
-        return fetch("http://localhost:8081/stocks",
-            {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(stock)
-            }
-        ).then(_ => setRequiresUpdate(true))
+        return stocksApi.addStock(stock).then(_ => setRequiresUpdate(true))
     }
 
 
     const onCategoryClicked = (category) => {
-        console.log(category)
-
-        fetch(`http://localhost:8081/stocks?category=${category}`)
-            .then(r => r.json())
+        stocksApi.getStocks(category)
             .then(datos => setStocks(datos))
 
     }
