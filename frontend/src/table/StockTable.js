@@ -27,7 +27,7 @@ const StockTable = ({stocks}) => {
 
                     {stocks
                         // sort by codigo
-                        .sort(order).map(stock =>
+                        .map(stock =>
                         <tr className='category-table-row' key={stock.id} stock={stock}>
                             <td className="category-td">{stock.codigo}</td>
                             <td className="category-td">{stock.descripcion}</td>
@@ -39,7 +39,7 @@ const StockTable = ({stocks}) => {
                             </td>
                         </tr>
 
-                    )}
+                    )}.sort(order)
                 </div>
             </section>
         </div>
