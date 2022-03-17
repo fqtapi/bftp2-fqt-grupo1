@@ -13,12 +13,12 @@ function Navbar() {
     }
 
     return (
-        <div className= "navbar">
             <NavContainer>
                 <div className='brand'>
                     <Link to="/">
                         <div className='flexBrand'>
                             <img className="logofqt" src={logo} alt={"Quiero Trabajo logo"}/>
+                            <h4> FUNDACION QUIERO TRABAJO</h4>
                         </div>
                     </Link>
 
@@ -36,7 +36,7 @@ function Navbar() {
                 </div>
                 <BgDiv className={`initial ${clicked ? ' active' : ''}`}/>
             </NavContainer>
-        </div>
+
     )
 }
 

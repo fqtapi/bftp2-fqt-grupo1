@@ -61,6 +61,7 @@ width: 150px;
 
 .table-container {
     width: 100%;
+    min-height: 100vh;
     overflow-y: auto;
     _overflow: auto;
     margin: 0 0 1em;
