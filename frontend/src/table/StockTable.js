@@ -3,9 +3,7 @@ import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
-const StockTable = (
-    {stocks}
-) => {
+const StockTable = ({stocks}) => {
 
 
     return (
@@ -26,7 +24,7 @@ const StockTable = (
                         <th className='stock-th'>Modificar</th>
                     </tr>
 
-                    {stocks.map[stock =>
+                    {props.stocks.map(stock =>
                         <tr className='category-table-row' key={stock.id} stock={stock}>
                             <td className="category-td">{stock.codigo}</td>
                             <td className="category-td">{stock.descripcion}</td>
@@ -38,7 +36,7 @@ const StockTable = (
                             </td>
                         </tr>
 
-                    ]}
+                    )}
                 </div>
             </section>
         </div>
