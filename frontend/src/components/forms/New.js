@@ -25,7 +25,7 @@ export const New = (props) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         props.addStock(datos)
-            .then(() => navigate("http://localhost:8081/stocks?category=${category}"))
+            .then(() => navigate("/stocks"))
     }
 
 
