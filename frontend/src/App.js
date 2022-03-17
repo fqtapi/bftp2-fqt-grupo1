@@ -29,7 +29,8 @@ function App() {
 
 
     const addStock = (stock) => {
-        return stocksApi.addStock(stock).then(_ => setRequiresUpdate(true))
+        return stocksApi.addStock(stock)
+            .then(_ => setRequiresUpdate(true))
     }
 
 
