@@ -39,7 +39,7 @@ const StockTable = ({stocks}) => {
                             </td>
                         </tr>
 
-                    )}.sort(order)
+                    )}
                 </div>
             </section>
         </div>
