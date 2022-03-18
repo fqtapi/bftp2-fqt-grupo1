@@ -2,6 +2,7 @@ import React from "react";
 import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
 import {Link} from "react-router-dom";
+import {order} from "../apis/Function";
 
 const StockTable = ({stocks}) => {
 
@@ -24,7 +25,9 @@ const StockTable = ({stocks}) => {
                         <th className='stock-th'>Modificar</th>
                     </tr>
 
-                    {stocks.map(stock =>
+                    {stocks
+                        // sort by codigo
+                        .map(stock =>
                         <tr className='category-table-row' key={stock.id} stock={stock}>
                             <td className="category-td">{stock.codigo}</td>
                             <td className="category-td">{stock.descripcion}</td>
