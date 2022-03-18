@@ -18,7 +18,7 @@ function Navbar() {
                     <Link to="/">
                         <div className='flexBrand'>
                             <img className="logofqt" src={logo} alt={"Quiero Trabajo logo"}/>
-                            <h4> FUNDACION QUIERO TRABAJO</h4>
+                            <h4 className="logo-title"> FUNDACION QUIERO TRABAJO</h4>
                         </div>
                     </Link>
 
