@@ -24,7 +24,7 @@ const StockTable = ({stocks}) => {
                         <th className='stock-th'>Modificar</th>
                     </tr>
 
-                    {props.stocks.map(stock =>
+                    {stocks.map(stock =>
                         <tr className='category-table-row' key={stock.id} stock={stock}>
                             <td className="category-td">{stock.codigo}</td>
                             <td className="category-td">{stock.descripcion}</td>
