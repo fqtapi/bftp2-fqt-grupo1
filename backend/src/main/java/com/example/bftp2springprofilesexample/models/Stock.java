@@ -1,4 +1,4 @@
-package com.example.bftp2springprofilesexample;
+package com.example.bftp2springprofilesexample.models;
 
 import javax.persistence.*;
 

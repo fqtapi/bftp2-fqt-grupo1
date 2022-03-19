@@ -1,5 +1,8 @@
-package com.example.bftp2springprofilesexample;
+package com.example.bftp2springprofilesexample.controllers;
 
+import com.example.bftp2springprofilesexample.models.Stock;
+import com.example.bftp2springprofilesexample.StockNotFoundException;
+import com.example.bftp2springprofilesexample.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

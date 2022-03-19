@@ -1,6 +1,8 @@
-package com.example.bftp2springprofilesexample;
+package com.example.bftp2springprofilesexample.repositories;
 
 
+import com.example.bftp2springprofilesexample.models.Stock;
+import com.example.bftp2springprofilesexample.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
