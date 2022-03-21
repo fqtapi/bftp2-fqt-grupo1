@@ -59,13 +59,13 @@ export const New = (props) => {
                             </div>
                             <div className="stock-form-group">
                                 <label htmlFor="">Categoría</label>
-                                <select className="stock-form-control" onChange={handleInputChange}
+                                <select value={datos.category} className="stock-form-control" onChange={handleInputChange}
                                         name="category"
                                         id="category">
-                                    <option value={datos.category}>Prendas</option>
-                                    <option value={datos.category}>Complementos</option>
-                                    <option value={datos.category}>Accesorios</option>
-                                    <option value={datos.category}>Cosméticos</option>
+                                    <option value="Prendas">Prendas</option>
+                                    <option value="Complementos">Complementos</option>
+                                    <option value="Accesorios">Accesorios</option>
+                                    <option value="Cosmeticos">Cosméticos</option>
                                 </select>
                             </div>
 
