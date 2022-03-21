@@ -33,11 +33,9 @@ function App() {
             .then(_ => setRequiresUpdate(true))
     }
 
-
     const onCategoryClicked = (category) => {
         stocksApi.getStocks(category)
             .then(datos => setStocks(datos))
-
     }
 
 
