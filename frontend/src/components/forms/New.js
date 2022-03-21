@@ -22,12 +22,12 @@ export const New = (props) => {
             [event.target.name]: event.target.value
         })
     }
+
     const enviarDatos = (event) => {
         event.preventDefault()
         props.addStock(datos)
             .then(() => navigate("/stocks"))
     }
-
 
     return (
         <div className='section-form-stock'>
