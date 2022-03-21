@@ -43,7 +43,12 @@ public class SampleDataLoader {
                 new Stock(21L, "Cosméticos05", "Laca-fijador", "Cosméticos",0),
                 new Stock(22L, "Cosméticos06", "Mascarilla de cabello", "Cosméticos",0),
                 new Stock(23L, "Cosméticos07", "Tinte Cabello", "Cosméticos",0),
-                new Stock(24L, "Cosméticos08", "Gel de baño", "Cosméticos",0)
+                new Stock(24L, "Cosméticos08", "Gel de baño", "Cosméticos",0),
+                new Stock(25L, "Cosméticos09", "Yves Rocher Gel", "Cosméticos",0),
+                new Stock(26L, "Cosméticos10", "Yves Rocher Serum", "Cosméticos",0),
+                new Stock(27L, "Cosméticos11", "Espuma Cabello", "Cosméticos",0),
+                new Stock(28L, "Cosméticos12", "Pasta de Dientes", "Cosméticos",0)
+
         ));
     }
 }
