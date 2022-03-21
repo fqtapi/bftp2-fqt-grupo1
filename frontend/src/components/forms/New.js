@@ -82,6 +82,7 @@ export const New = (props) => {
                             <div className="btn-edit-container">
                                 <button type="submit" className="css-button-rounded--red">Guardar</button>
                             </div>
+
                         </form>
                     </div>
                 </div>

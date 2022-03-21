@@ -1,7 +1,7 @@
 import './App.css';
 import Home from "./home/Home";
 import Navbar from "./components/header/Navbar";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import { Navigate, Route, Routes} from "react-router-dom";
 import {New} from "./components/forms/New";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
@@ -43,7 +43,7 @@ function App() {
 
     if (loggedIn) {
         return (
-            <BrowserRouter>
+                <>
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
@@ -52,9 +52,9 @@ function App() {
                     <Route path="/stocks" element={<StockTable stocks={stocks}/>}/>
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
-
                 <Footer/>
-            </BrowserRouter>
+                </>
+
         );
     }
 
