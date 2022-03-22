@@ -10,10 +10,11 @@ function Home({onCategoryClicked}) {
     const navigate = useNavigate();
 
     return (
+
         <section className="home-section">
+            <br/><br/>
+            <h1>GESTION DE STOCK</h1>
             <div className="home">
-
-
                 {categories.map((category, index) =>
                     <Card
                         category={category} key={index}
