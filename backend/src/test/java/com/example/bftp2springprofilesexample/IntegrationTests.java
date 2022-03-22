@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;
-
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -24,27 +24,28 @@ class IntegrationTests {
     @Autowired
     private MockMvc api;
 
-    //@BeforeEach
-   // void setUp() {
-        //StockRepository.deleteAll();
- //   }
-
-    /*@Test
-    void returnsExistingCoders() throws Exception {
-
-        coderRepository.saveAll(
-                List.of(new Coder("Amanda", "amanda@factoriaf5.org"),
-                        new Coder("Laura", "laura@factoriaf5.org"))
-        );
-
-        api.perform(get("/coders"))
-                .andExpect(jsonPath("$[*]", hasSize(2)))
-                .andExpect(jsonPath("$[0].name", equalTo("Amanda")))
-                .andExpect(jsonPath("$[0].email", equalTo("amanda@factoriaf5.org")))
-                .andExpect(jsonPath("$[1].name", equalTo("Laura")))
-                .andExpect(jsonPath("$[1].email", equalTo("laura@factoriaf5.org"))) ;
-*/
-
+    @BeforeEach
+    void setUp() {
+        stockRepository.deleteAll();
     }
+
+
+    @Test
+    void podemosModificarLaCantidadDeUnStock() throws Exception {
+        Stock stock = new Stock();
+        stock.setCantidad(10);
+        Stock stockGuardado = stockRepository.save(stock);
+
+        api.perform(put("/api/stocks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"id\": "+stockGuardado.getId()+",\"cantidad\": 11 }")
+                );
+
+        Stock stockModificado = stockRepository.findById(stockGuardado.getId()).get();
+
+        assertThat(stockModificado.getCantidad(), equalTo(11));
+    }
+
+}
 
 

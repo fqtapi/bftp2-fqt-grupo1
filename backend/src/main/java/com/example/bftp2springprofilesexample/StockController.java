@@ -35,10 +35,17 @@ public class StockController {
     }
 
     @PutMapping("/{id}")
+    public Stock updateStockById(@RequestBody Stock stock) {
+        stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
+        return stockRepository.save(stock);
+    }
+
+    @PutMapping
     public Stock updateStock(@RequestBody Stock stock) {
         stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
         return stockRepository.save(stock);
     }
+
     @DeleteMapping("/delete/{id}")
     public Stock deleteStockById(@PathVariable Long id) {
         Stock stock = stockRepository.findById(id).orElseThrow(StockNotFoundException::new);
