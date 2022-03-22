@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@RequestMapping("/api/stocks")
 @RestController
 public class StockController {
     private final StockRepository stockRepository;
@@ -15,7 +15,7 @@ public class StockController {
         this.stockRepository = stockRepository;
     }
 
-    @GetMapping("/api/stocks")
+    @GetMapping
     public List<Stock> allStocks(@RequestParam(required = false) String category) {
 
         if (category != null) {
@@ -24,20 +24,26 @@ public class StockController {
         return stockRepository.findAll();
     }
 
-    @PostMapping("/api/stocks")
+    @PostMapping
     public Stock addStock(@RequestBody Stock stock) {
         return stockRepository.save(stock);
     }
 
-    @GetMapping("/api/stocks/{id}")
+    @GetMapping("/{id}")
     public Stock findStock(@PathVariable Long id){
         return stockRepository.findById(id).orElseThrow(null);
     }
 
-    @PutMapping("/api/stocks/{id}")
+    @PutMapping("/{id}")
     public Stock updateStock(@RequestBody Stock stock) {
         stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
         return stockRepository.save(stock);
+    }
+    @DeleteMapping("/delete/{id}")
+    public Stock deleteStockById(@PathVariable Long id) {
+        Stock stock = stockRepository.findById(id).orElseThrow(StockNotFoundException::new);
+        stockRepository.deleteById(id);
+        return stock;
     }
 }
 
