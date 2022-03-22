@@ -46,10 +46,9 @@ const StockTable = ({stocks}) => {
                     <tr className='category-table-title'>
                         <th className='stock-th'>Código</th>
                         <th className='stock-th'>Descripcion</th>
-                        <th className='stock-th'>Category</th>
+                        <th className='stock-th'>Categoría</th>
                         <th className='stock-th'>Cantidad</th>
                         <th className='stock-th'/>
-
                         <th className='stock-th'>Modificar</th>
                     </tr>
 
