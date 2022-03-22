@@ -33,6 +33,11 @@ function App() {
             .then(_ => setRequiresUpdate(true))
     }
 
+    const deleteStock = (stock) => {
+        return stocksApi.deleteStock(stock)
+            .then(_ => setRequiresUpdate(true))
+    }
+
     const onCategoryClicked = (category) => {
         stocksApi.getStocks(category)
             .then(datos => setStocks(datos))
@@ -47,7 +52,7 @@ function App() {
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/stocks" element={<StockTable stocks={stocks}/>}/>
+                    <Route path="/stocks" element={<StockTable stocks={stocks} deleteStock={deleteStock}/>}/>
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
                 <Footer/>

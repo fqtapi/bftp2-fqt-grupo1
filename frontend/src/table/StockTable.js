@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
+import {FaTrashAlt} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
 const QuantityPopup = ({onQuantityChanged}) => {
@@ -13,7 +14,7 @@ const QuantityPopup = ({onQuantityChanged}) => {
     </div>;
 }
 
-const StockTable = ({stocks}) => {
+const StockTable = ({stocks, deleteStock}) => {
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -32,6 +33,8 @@ const StockTable = ({stocks}) => {
         setShowPopup(false)
 
     }
+
+
 
     return (
 
@@ -73,6 +76,10 @@ const StockTable = ({stocks}) => {
                                     <Link className="btn-orange-link" to="/new"
                                           state={{data: stock}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
                                 </td>
+
+                                <td className="category-td-delete">
+                               <FaTrashAlt onClick={() => deleteStock(stock.id)} fixedWidth style={{color: 'red'}}/>
+                            </td>
                             </tr>
                         )}
                 </div>

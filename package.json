@@ -4,5 +4,8 @@
   },
   "scripts": {
     "start": "node index.js"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0"
   }
 }
