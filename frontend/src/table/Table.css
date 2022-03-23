@@ -69,7 +69,10 @@ width: 150px;
     margin: 0 0 1em;
 
 }
-
+.delete-trash:hover {
+    cursor: pointer;
+    transform: rotate(20grad);
+}
 .categoryList {
     display: flex;
     justify-content: center;

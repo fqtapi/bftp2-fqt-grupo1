@@ -21,11 +21,11 @@ class StocksApi {
     }
 
     deleteStock(id) {
-        return fetch(`${this.STOCKS_API_URL}api/stocks/delete/${id}`,
+        return fetch(`${this.STOCKS_API_URL}/delete/${id}`,
             {
                 method: 'DELETE'
             }
-            )
+        )
     }
 
 
