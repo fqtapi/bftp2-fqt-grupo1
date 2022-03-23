@@ -28,7 +28,7 @@ class StocksApi {
             )
     }
 
-    addStock
+
 }
 
 export default StocksApi;
