@@ -14,14 +14,18 @@ public class Stock {
     private String descripcion;
     private String category;
     private int cantidad;
+    private int add;
+    private int subtract;
 
 
-    public Stock(Long id, String codigo, String descripcion, String category, int cantidad) {
+    public Stock(Long id, String codigo, String descripcion, String category, int cantidad, int add, int subtract) {
         this.id = id;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.category = category;
         this.cantidad = cantidad;
+        this.add = add;
+        this.subtract = subtract;
     }
 
     public Stock() {
@@ -68,6 +72,20 @@ public class Stock {
         this.category = category;
     }
 
+    public int getAdd() {
+        return add;
+    }
 
+    public void setAdd(int add) {
+        this.add = add;
+    }
+
+    public int getSubtract() {
+        return subtract;
+    }
+
+    public void setSubtract(int subtract) {
+        this.subtract = subtract;
+    }
 
 }

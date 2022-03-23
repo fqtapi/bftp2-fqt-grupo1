@@ -21,7 +21,7 @@ class StocksApi {
     }
 
     deleteStock(id) {
-        return fetch(`http://localhost:8081/api/stocks/delete/${id}`,
+        return fetch(`${this.STOCKS_API_URL}api/stocks/delete/${id}`,
             {
                 method: 'DELETE'
             }
