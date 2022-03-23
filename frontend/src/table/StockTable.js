@@ -10,10 +10,16 @@ const QuantityPopup = ({onQuantityChanged}) => {
 
     const [quantity, setQuantity] = useState(0);
 
-    return <div className="popup-container">
-        <input type="number" onChange={(e) => setQuantity(e.target.valueAsNumber)}/>
+    return <div className="popup-container" >
 
-        <input type="submit" onClick={() =>onQuantityChanged(quantity)} value="SUMAR"/>
+
+        <input className="input-number"  type="number" onChange={(e) => setQuantity(e.target.valueAsNumber)}/>
+
+        <input className="input-sumar" type="submit" onClick={() =>onQuantityChanged(quantity)} value="SUMAR"/>
+
+
+
+
 
 
     </div>;

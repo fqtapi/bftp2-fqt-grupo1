@@ -125,21 +125,48 @@ width: 150px;
 }
 
 .popup-container{
-    height:300px;
-    width: 400px;
+    height:200px;
+    width: 300px;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
+    background-color: #EFEFEF;
     padding: 14px 28px;
     border-radius: 5px;
     max-width: 600px;
     min-width: 300px;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 8px 8px 20px 8px rgba(0, 0, 0, 0);
 }
-input{
+.input-number{
     font-family: "Roboto Light";
+    background-color: white;
+    border-color: #F1654B;
+    border-radius: 8px;
+    height:50px;
+    width: 70px;
+    margin-top: 70px;
+    margin-left: 40px;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+
+}
+.input-sumar{
+    font-family: "Roboto Light";
+    color: white;
+    font-weight: bold;
     background-color: #F1654B;
-    border-radius: 3px;
+    border-radius: 8px;
+    height:50px;
+    width: 120px;
+    margin-left: 30px;
+    margin-top: 70px;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+
+
 }
