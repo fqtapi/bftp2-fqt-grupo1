@@ -7,9 +7,9 @@ const QuantityPopup = ({onQuantityChanged}) => {
 
     const [quantity, setQuantity] = useState(0);
 
-    return <div>
+    return <div className="popup-container">
         <input type="number" onChange={(e) => setQuantity(e.target.valueAsNumber)}/>
-        <input type="submit" onClick={() =>onQuantityChanged(quantity)} value="Add"/>
+        <input type="submit" onClick={() =>onQuantityChanged(quantity)} value="GUARDAR"/>
     </div>;
 }
 

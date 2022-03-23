@@ -104,3 +104,22 @@ width: 150px;
     }
 }
 
+.popup-container{
+    height:300px;
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 5px;
+    max-width: 600px;
+    min-width: 300px;
+}
+input{
+    font-family: "Roboto Light";
+    background-color: #F1654B;
+    border-radius: 3px;
+}
