@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
+import {FaRegTrashAlt} from 'react-icons/fa';
+import {FaRegPlusSquare} from 'react-icons/fa';
+import {FaRegMinusSquare} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
 const QuantityPopup = ({onQuantityChanged}) => {
@@ -9,17 +12,19 @@ const QuantityPopup = ({onQuantityChanged}) => {
 
     return <div className="popup-container">
         <input type="number" onChange={(e) => setQuantity(e.target.valueAsNumber)}/>
-        <input type="submit" onClick={() =>onQuantityChanged(quantity)} value="GUARDAR"/>
+
+        <input type="submit" onClick={() =>onQuantityChanged(quantity)} value="SUMAR"/>
+
+
     </div>;
 }
 
-const StockTable = ({stocks}) => {
+const StockTable = ({stocks, deleteStock}) => {
 
     const [showPopup, setShowPopup] = useState(false);
 
     const mostrarPopupParaSumar = stock => {
         setShowPopup(true);
-
 
 
     };
@@ -33,6 +38,7 @@ const StockTable = ({stocks}) => {
 
     }
 
+
     return (
 
 
@@ -45,11 +51,12 @@ const StockTable = ({stocks}) => {
                 <div className='table-list'>
                     <tr className='category-table-title'>
                         <th className='stock-th'>Código</th>
-                        <th className='stock-th'>Descripcion</th>
+                        <th className='stock-th'>Descripción</th>
                         <th className='stock-th'>Categoría</th>
                         <th className='stock-th'>Cantidad</th>
                         <th className='stock-th'/>
-                        <th className='stock-th'>Modificar</th>
+                        <th className='stock-th'/>
+                        <th className='stock-th'/>
                     </tr>
 
                     {stocks
@@ -64,14 +71,20 @@ const StockTable = ({stocks}) => {
                                     color: "red"
                                 } : {}}>{stock.cantidad}</td>
                                 <td className="category-td">
-                                    <>
-                                        <button onClick={() => mostrarPopupParaSumar(stock)}>+</button>
-                                        <button>-</button>
-                                    </>
+
+                                    <FaRegPlusSquare className="calculo-suma" onClick={() => mostrarPopupParaSumar(stock)}/>
+
+                                    <FaRegMinusSquare className="calculo-resta"/>
+
                                 </td>
                                 <td className="category-td-link">
                                     <Link className="btn-orange-link" to="/new"
-                                          state={{data: stock}}><FaEdit fixedWidth style={{color: 'red'}}/></Link>
+                                          state={{data: stock}}><FaEdit fixedWidth style={{color: 'blue'}}/></Link>
+                                </td>
+
+                                <td className="category-td-delete">
+                                    <FaRegTrashAlt onClick={() => deleteStock(stock.id)} fixedWidth
+                                                   style={{color: 'red'}}/>
                                 </td>
                             </tr>
                         )}

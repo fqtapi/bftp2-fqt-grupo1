@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 
 
 function Home({onCategoryClicked}) {
-    const categories = ["Prendas", "Complementos", "Accesorios", "Cosméticos"]
+    const categories = ["Prendas", "Complementos", "Cosméticos"]
 
     const navigate = useNavigate();
 

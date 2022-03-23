@@ -19,6 +19,16 @@ class StocksApi {
             }
         )
     }
+
+    deleteStock(id) {
+        return fetch(`http://localhost:8081/api/stocks/delete/${id}`,
+            {
+                method: 'DELETE'
+            }
+            )
+    }
+
+    addStock
 }
 
 export default StocksApi;

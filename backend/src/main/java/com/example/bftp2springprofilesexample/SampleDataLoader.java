@@ -20,7 +20,7 @@ public class SampleDataLoader {
     @PostConstruct
     public void loadSampleData() {
         stockRepository.saveAll(List.of(
-                new Stock(1L, "Prendas01", "Abrigos", "Prendas", 10),
+                new Stock(1L, "Prendas01", "Abrigos", "Prendas", 0),
                 new Stock(2L, "Prendas02", "Chaquetas y americanas", "Prendas",0),
                 new Stock(3L, "Prendas03", "Faldas", "Prendas",0),
                 new Stock(4L, "Prendas04", "Pantalones", "Prendas", 0),
@@ -35,7 +35,7 @@ public class SampleDataLoader {
                 new Stock(13L, "Complementos04", "Cinturones", "Complementos",0),
                 new Stock(14L, "Complementos05", "Sujetadores", "Complementos",0),
                 new Stock(15L, "Complementos06", "Medias", "Complementos",0),
-                new Stock(16L, "Accesorios01", "Bisuteria", "Accesorios",0),
+                new Stock(16L, "Complementos07", "Bisuteria", "Complementos",0),
                 new Stock(17L, "Cosméticos01", "Desodorante", "Cosméticos", 0),
                 new Stock(18L, "Cosméticos02", "Crema hidratante facial", "Cosméticos",0),
                 new Stock(19L, "Cosméticos03", "Shampoo", "Cosméticos",0),
