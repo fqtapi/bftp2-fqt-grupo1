@@ -44,7 +44,13 @@ public class Stock {
         return descripcion;
     }
 
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public int getCantidad() {
+        cantidad = cantidad + add;
+        cantidad = cantidad - subtract;
         return cantidad;
     }
 
@@ -60,10 +66,6 @@ public class Stock {
         this.descripcion = descripcion;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -73,7 +75,7 @@ public class Stock {
     }
 
     public int getAdd() {
-        return add;
+        return 0;
     }
 
     public void setAdd(int add) {
@@ -81,7 +83,7 @@ public class Stock {
     }
 
     public int getSubtract() {
-        return subtract;
+        return 0;
     }
 
     public void setSubtract(int subtract) {
