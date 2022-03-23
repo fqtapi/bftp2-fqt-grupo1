@@ -6,50 +6,14 @@ import {FaRegPlusSquare} from 'react-icons/fa';
 import {FaRegMinusSquare} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
-const QuantityPopup = ({onQuantityChanged}) => {
-
-    const [quantity, setQuantity] = useState(0);
-
-    return <div className="popup-container" >
-
-
-        <input className="input-number"  type="number" onChange={(e) => setQuantity(e.target.valueAsNumber)}/>
-
-        <input className="input-sumar" type="submit" onClick={() =>onQuantityChanged(quantity)} value="SUMAR"/>
-
-
-
-
-
-
-    </div>;
-}
 
 const StockTable = ({stocks, deleteStock}) => {
-
-    const [showPopup, setShowPopup] = useState(false);
-
-    const mostrarPopupParaSumar = stock => {
-        setShowPopup(true);
-
-
-    };
-
-    // necesito pasarle el objeto stock que estoy modifica
-    const onQuantityAdded = (qty) => {
-        //modificar el objeto stock para actualizar la cantidad
-        console.log("Enviando " + qty)
-        // en lugar de hacer un console.log hare un fetch "PUT /api/tocks
-        setShowPopup(false)
-
-    }
 
 
     return (
 
 
         <div className="table-container">
-            {showPopup && <QuantityPopup onQuantityChanged={onQuantityAdded}/>}
             <h1 className="categoryList-title">Stock</h1>
 
 
@@ -78,7 +42,7 @@ const StockTable = ({stocks, deleteStock}) => {
                                 } : {}}>{stock.cantidad}</td>
                                 <td className="category-td">
 
-                                    <FaRegPlusSquare className="calculo-suma" onClick={() => mostrarPopupParaSumar(stock)}/>
+                                    <FaRegPlusSquare className="calculo-suma"/>
 
                                     <FaRegMinusSquare className="calculo-resta"/>
 

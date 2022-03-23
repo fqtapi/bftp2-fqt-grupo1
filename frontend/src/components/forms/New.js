@@ -14,7 +14,9 @@ export const New = (props) => {
         codigo: '',
         descripcion: '',
         category: '',
-        cantidad: ''
+        cantidad: '',
+        add: '',
+        subtract: ''
     })
     const handleInputChange = (event) => {
         setDatos({
@@ -66,7 +68,6 @@ export const New = (props) => {
                                     <option>Seleccionar Categoría</option>
                                     <option value="Prendas">Prendas</option>
                                     <option value="Complementos">Complementos</option>
-                                    <option value="Accesorios">Accesorios</option>
                                     <option value="Cosmeticos">Cosméticos</option>
                                 </select>
                             </div>
@@ -79,6 +80,26 @@ export const New = (props) => {
                                        onChange={handleInputChange}
                                        id="cantidad"
                                        name="cantidad"/>
+                            </div>
+
+                            <div className="stock-form-group">
+                                <label htmlFor="">Cantidad a sumar</label>
+                                <input type="text"
+                                       className="stock-form-control add-input"
+                                       value={datos.add}
+                                       onChange={handleInputChange}
+                                       id="add"
+                                       name="add"/>
+                            </div>
+
+                            <div className="stock-form-group">
+                                <label htmlFor="">Cantidad a restar</label>
+                                <input type="text"
+                                       className="stock-form-control add-input"
+                                       value={datos.subtract}
+                                       onChange={handleInputChange}
+                                       id="subtract"
+                                       name="subtract"/>
                             </div>
 
                             <div className="btn-edit-container">
