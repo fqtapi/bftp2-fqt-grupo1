@@ -83,7 +83,7 @@ const StockTable = ({stocks, deleteStock}) => {
                                 </td>
 
                                 <td className="category-td-delete">
-                                    <FaRegTrashAlt onClick={() => deleteStock(stock.id)} fixedWidth
+                                    <FaRegTrashAlt className="delete-trash" onClick={() => deleteStock(stock.id)} fixedWidth
                                                    style={{color: 'red'}}/>
                                 </td>
                             </tr>

@@ -88,12 +88,21 @@ width: 150px;
 
 .calculo-suma{
     color:green;
-    size: 90px;
+    font-size:20px
 }
 
 .calculo-resta{
     margin-left: 10px;
     color:red;
+    font-size: 20px;
+}
+
+.btn-orange-link{
+    font-size: 20px;
+}
+
+.delete-trash{
+    font-size: 20px;
 }
 
 @media (max-width: 844px) {
