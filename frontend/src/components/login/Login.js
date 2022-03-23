@@ -1,30 +1,98 @@
 import './Login.css';
 import logo from "../../assets/logo/fqtlogo.png";
-import React from "react";
+import React, {useState, useRef} from "react";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+import AuthService from "../../services/auth.service";
 
-function Login(props) {
-
-    const handleSubmit = () => {
-        props.onSuccessfulLogin();
+const required = (value) => {
+    if (!value) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                This field is required!
+            </div>
+        );
     }
+};
+const Login = (props) => {
+    const form = useRef();
+    const checkBtn = useRef();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+    const onChangeUsername = (e) => {
+        const username = e.target.value;
+        setUsername(username);
+    };
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };
+    const handleLogin = (e) => {
+        e.preventDefault();
+        setMessage("");
+        setLoading(true);
+        form.current.validateAll();
+        if (checkBtn.current.context._errors.length === 0) {
+            AuthService.login(username, password).then(
+                () => {
+                    props.history.push("/profile");
+                    window.location.reload();
+                },
+                (error) => {
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    setLoading(false);
+                    setMessage(resMessage);
+                }
+            );
+        } else {
+            setLoading(false);
+        }
+    };
+
+    /*const handleSubmit = () => {
+        props.onSuccessfulLogin();
+    }*/
 
     return (
 
         <div className="login">
-            <section className="login-section">
-                <img className="logo-fqt-log" src={logo} alt={"Quiero Trabajo logo"}/>
-                <h2 className="login-title">FUNDACIÓN QUIERO TRABAJO</h2>
-
-                <form className="login-form" onSubmit={handleSubmit}>
+            <img className="logo-fqt-log" src={logo} alt={"Quiero Trabajo logo"}/>
+            <h2 className="login-title">FUNDACIÓN QUIERO TRABAJO</h2>
+            <form className="login-form" onSubmit={handleLogin} ref={form}>
                     <span><label className="label-login" htmlFor="userInput">Usuario:  </label>
-                    <input className="input-login" type="text"/></span>
-                    <span><label className="label-login" htmlFor="passwordInput">Contraseña:  </label>
-                    <input className="input-login" type="password"/></span>
-                    <input className="css-button-rounded--red" type="submit" value="ACCEDER"/>
-                </form>
-            </section>
+                    <input className="input-login"
+                           type="text"
+                           name="username"
+                           value={username}
+                           onChange={onChangeUsername}
+                           validations={[required]}
+                    /></span>
+
+                <span><label className="label-login" htmlFor="passwordInput">Contraseña:  </label>
+                    <input className="input-login"
+                           type="password"  name="password"
+                           value={password}
+                           onChange={onChangePassword}
+                           validations={[required]}
+                    /></span>
+
+                <input className="css-button-rounded--red" disabled={loading}
+                       {...loading && (
+                           <span className="spinner-border spinner-border-sm"></span>
+                       )} type="submit" value="ACCEDER"/>
+
+            </form>
         </div>
-    );
+)
+    ;
 }
 
 export default Login;
