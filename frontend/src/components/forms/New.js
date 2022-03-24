@@ -77,6 +77,7 @@ export const New = (props) => {
                                 <input type="text"
                                        className="stock-form-control"
                                        value={datos.cantidad}
+                                       min="1" max="10000"
                                        onChange={handleInputChange}
                                        id="cantidad"
                                        name="cantidad"/>
@@ -87,6 +88,7 @@ export const New = (props) => {
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.add}
+                                       min="1" max="10000"
                                        onChange={handleInputChange}
                                        id="add"
                                        name="add"/>
@@ -97,6 +99,7 @@ export const New = (props) => {
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.subtract}
+                                       min="1" max="10000"
                                        onChange={handleInputChange}
                                        id="subtract"
                                        name="subtract"/>
