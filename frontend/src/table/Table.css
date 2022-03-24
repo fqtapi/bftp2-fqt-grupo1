@@ -5,10 +5,11 @@
     margin-top: 20px;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-top: 30px;
 }
+
 .table-list {
     border-radius: 20px;
 }
@@ -19,7 +20,7 @@ h1{
 }
 
 i {
-width: 150px;
+    width: 150px;
 
 }
 
@@ -45,7 +46,6 @@ width: 150px;
 }
 
 
-
 .category-td {
     padding: 8px;
     font-family: "Roboto Light", sans-serif;
@@ -69,10 +69,17 @@ width: 150px;
     margin: 0 0 1em;
 
 }
+
 .delete-trash:hover {
     cursor: pointer;
     transform: rotate(20grad);
 }
+
+.edit-pen:hover {
+    cursor: pointer;
+    transform: rotate(20grad);
+}
+
 .categoryList {
     display: flex;
     justify-content: center;
@@ -86,26 +93,71 @@ width: 150px;
     color: #000000;
     border-top: 1px solid transparent;
     text-align-last: center;
+    width: 40px;
+    position: relative;
+    display: inline-block;
 
 }
 
-.calculo-suma{
-    color:green;
-    font-size:20px
+.category-td-delete {
+    padding: 8px;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    color: #000000;
+    border-top: 1px solid transparent;
+    text-align-last: center;
+    width: 40px;
+    position: relative;
+    display: inline-block;
 }
 
-.calculo-resta{
+.calculo-suma {
+    color: green;
+    font-size: 20px
+}
+
+.calculo-resta {
     margin-left: 10px;
-    color:red;
+    color: red;
     font-size: 20px;
 }
 
-.btn-orange-link{
+.btn-orange-link {
+    font-size: 20px;
+
+}
+
+.delete-trash {
     font-size: 20px;
 }
 
-.delete-trash{
-    font-size: 20px;
+
+
+.code2 {
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    top:28px;
+    left:25px;
+    background-color:lightgray;
+}
+
+.code3 {
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    top:28px;
+    left:25px;
+    background-color:lightgray;
+}
+
+.category-td-link:hover .code2 {
+    display: block;
+}
+
+.category-td-delete:hover .code3 {
+    display: block;
 }
 
 @media (max-width: 844px) {
@@ -127,49 +179,3 @@ width: 150px;
     }
 }
 
-.popup-container{
-    height:200px;
-    width: 300px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    background-color: #EFEFEF;
-    padding: 14px 28px;
-    border-radius: 5px;
-    max-width: 600px;
-    min-width: 300px;
-    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0 10px 13px -7px #000000, 8px 8px 20px 8px rgba(0, 0, 0, 0);
-}
-.input-number{
-    font-family: "Roboto Light";
-    background-color: white;
-    border-color: #F1654B;
-    border-radius: 8px;
-    height:50px;
-    width: 70px;
-    margin-top: 70px;
-    margin-left: 40px;
-    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-
-
-}
-.input-sumar{
-    font-family: "Roboto Light";
-    color: white;
-    font-weight: bold;
-    background-color: #F1654B;
-    border-radius: 8px;
-    height:50px;
-    width: 120px;
-    margin-left: 30px;
-    margin-top: 70px;
-    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-
-
-
-}

@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
 import {FaRegTrashAlt} from 'react-icons/fa';
-import {FaRegPlusSquare} from 'react-icons/fa';
-import {FaRegMinusSquare} from 'react-icons/fa';
 import {Link} from "react-router-dom";
 
 
@@ -26,7 +24,6 @@ const StockTable = ({stocks, deleteStock}) => {
                         <th className='stock-th'>Cantidad</th>
                         <th className='stock-th'/>
                         <th className='stock-th'/>
-                        <th className='stock-th'/>
                     </tr>
 
                     {stocks
@@ -40,21 +37,18 @@ const StockTable = ({stocks, deleteStock}) => {
                                     fontSize: 25,
                                     color: "red"
                                 } : {}}>{stock.cantidad}</td>
-                                <td className="category-td">
 
-                                    <FaRegPlusSquare className="calculo-suma"/>
-
-                                    <FaRegMinusSquare className="calculo-resta"/>
-
-                                </td>
                                 <td className="category-td-link">
-                                    <Link className="btn-orange-link" to="/new"
-                                          state={{data: stock}}><FaEdit fixedWidth style={{color: 'blue'}}/></Link>
+
+                                    <Link className="btn-orange-link"  to="/new"
+                                          state={{data: stock}}><FaEdit className="edit-pen" fixedWidth style={{color: 'blue'}}/></Link>
+                                    <div className="code2">Modificar</div>
                                 </td>
 
                                 <td className="category-td-delete">
                                     <FaRegTrashAlt className="delete-trash" onClick={() => deleteStock(stock.id)} fixedWidth
-                                                   style={{color: 'red'}}/>
+                                                   style={{color: 'red'}} />
+                                    <div className="code3">Eliminar</div>
                                 </td>
                             </tr>
                         )}
