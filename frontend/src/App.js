@@ -20,12 +20,12 @@ function App() {
 
 
     useEffect(() => {
-        if (requiresUpdate) {
+        if (loggedIn && requiresUpdate) {
             return stocksApi.getStocks()
                 .then(setStocks)
             .then(_ => setRequiresUpdate(false));
         }
-    }, [requiresUpdate])
+    }, [requiresUpdate, loggedIn])
 
 
     const addStock = (stock) => {

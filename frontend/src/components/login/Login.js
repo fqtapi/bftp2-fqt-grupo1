@@ -5,6 +5,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import AuthService from "../../services/auth.service";
+import authService from "../../services/auth.service";
 
 const required = (value) => {
     if (!value) {
@@ -32,34 +33,11 @@ const Login = (props) => {
     };
     const handleLogin = (e) => {
         e.preventDefault();
-        setMessage("");
-        setLoading(true);
-        form.current.validateAll();
-        if (checkBtn.current.context._errors.length === 0) {
-            AuthService.login(username, password).then(
-                () => {
-                    props.history.push("/profile");
-                    window.location.reload();
-                },
-                (error) => {
-                    const resMessage =
-                        (error.response &&
-                            error.response.data &&
-                            error.response.data.message) ||
-                        error.message ||
-                        error.toString();
-                    setLoading(false);
-                    setMessage(resMessage);
-                }
-            );
-        } else {
-            setLoading(false);
-        }
-    };
 
-    /*const handleSubmit = () => {
-        props.onSuccessfulLogin();
-    }*/
+        authService.login(username, password)
+            .then(props.onSuccessfulLogin)
+
+    };
 
     return (
 
@@ -84,10 +62,7 @@ const Login = (props) => {
                            validations={[required]}
                     /></span>
 
-                <input className="css-button-rounded--red" disabled={loading}
-                       {...loading && (
-                           <span className="spinner-border spinner-border-sm"></span>
-                       )} type="submit" value="ACCEDER"/>
+                <input className="css-button-rounded--red" type="submit" value="Acceder"/>
 
             </form>
         </div>
