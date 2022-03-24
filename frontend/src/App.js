@@ -1,7 +1,7 @@
 import './App.css';
 import Home from "./home/Home";
 import Navbar from "./components/header/Navbar";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import { Navigate, Route, Routes} from "react-router-dom";
 import {New} from "./components/forms/New";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
@@ -33,28 +33,31 @@ function App() {
             .then(_ => setRequiresUpdate(true))
     }
 
+    const deleteStock = (stock) => {
+        return stocksApi.deleteStock(stock)
+            .then(_ => setRequiresUpdate(true))
+    }
 
     const onCategoryClicked = (category) => {
         stocksApi.getStocks(category)
             .then(datos => setStocks(datos))
-
     }
 
 
     if (loggedIn) {
         return (
-            <BrowserRouter>
+                <>
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/stocks" element={<StockTable stocks={stocks}/>}/>
+                    <Route path="/stocks" element={<StockTable stocks={stocks} deleteStock={deleteStock}/>}/>
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
-
                 <Footer/>
-            </BrowserRouter>
+                </>
+
         );
     }
 

@@ -10,8 +10,14 @@
     grid-auto-rows: 1fr;
     justify-items: center;
 
-}
 
+}
+h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
 .home-section{
     display: flex;
     flex-direction: column;

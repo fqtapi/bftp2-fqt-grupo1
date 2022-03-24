@@ -14,7 +14,9 @@ export const New = (props) => {
         codigo: '',
         descripcion: '',
         category: '',
-        cantidad: ''
+        cantidad: '',
+        add: '',
+        subtract: ''
     })
     const handleInputChange = (event) => {
         setDatos({
@@ -22,12 +24,12 @@ export const New = (props) => {
             [event.target.name]: event.target.value
         })
     }
+
     const enviarDatos = (event) => {
         event.preventDefault()
         props.addStock(datos)
             .then(() => navigate("/stocks"))
     }
-
 
     return (
         <div className='section-form-stock'>
@@ -59,13 +61,14 @@ export const New = (props) => {
                             </div>
                             <div className="stock-form-group">
                                 <label htmlFor="">Categoría</label>
-                                <select className="stock-form-control" onChange={handleInputChange}
+                                <select value={datos.category} className="stock-form-control"
+                                        onChange={handleInputChange}
                                         name="category"
                                         id="category">
-                                    <option value={datos.category}>Prendas</option>
-                                    <option value={datos.category}>Complementos</option>
-                                    <option value={datos.category}>Accesorios</option>
-                                    <option value={datos.category}>Cosméticos</option>
+                                    <option>Seleccionar Categoría</option>
+                                    <option value="Prendas">Prendas</option>
+                                    <option value="Complementos">Complementos</option>
+                                    <option value="Cosmeticos">Cosméticos</option>
                                 </select>
                             </div>
 
@@ -74,14 +77,38 @@ export const New = (props) => {
                                 <input type="text"
                                        className="stock-form-control"
                                        value={datos.cantidad}
+                                       min="1" max="10000"
                                        onChange={handleInputChange}
                                        id="cantidad"
                                        name="cantidad"/>
                             </div>
 
+                            <div className="stock-form-group">
+                                <label htmlFor="">Cantidad a sumar</label>
+                                <input type="text"
+                                       className="stock-form-control add-input"
+                                       value={datos.add}
+                                       min="1" max="10000"
+                                       onChange={handleInputChange}
+                                       id="add"
+                                       name="add"/>
+                            </div>
+
+                            <div className="stock-form-group">
+                                <label htmlFor="">Cantidad a restar</label>
+                                <input type="text"
+                                       className="stock-form-control add-input"
+                                       value={datos.subtract}
+                                       min="1" max="10000"
+                                       onChange={handleInputChange}
+                                       id="subtract"
+                                       name="subtract"/>
+                            </div>
+
                             <div className="btn-edit-container">
                                 <button type="submit" className="css-button-rounded--red">Guardar</button>
                             </div>
+
                         </form>
                     </div>
                 </div>

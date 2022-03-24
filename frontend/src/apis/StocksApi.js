@@ -38,6 +38,16 @@ class StocksApi {
             }
         )
     }
+
+    deleteStock(id) {
+        return fetch(`${this.STOCKS_API_URL}/delete/${id}`,
+            {
+                method: 'DELETE'
+            }
+        )
+    }
+
+
 }
 
 export default StocksApi;

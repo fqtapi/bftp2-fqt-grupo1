@@ -15,7 +15,6 @@ public class StockController {
 
     @Autowired
     public StockController(StockRepository stockRepository) {
-
         this.stockRepository = stockRepository;
     }
 
@@ -27,6 +26,7 @@ public class StockController {
         }
         return stockRepository.findAll();
     }
+
     @PostMapping
     public Stock addStock(@RequestBody Stock stock) {
         return stockRepository.save(stock);
@@ -37,17 +37,23 @@ public class StockController {
         return stockRepository.findById(id).orElseThrow(null);
     }
 
+    @PutMapping("/{id}")
+    public Stock updateStockById(@RequestBody Stock stock) {
+        stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
+        return stockRepository.save(stock);
+    }
+
+    @PutMapping
+    public Stock updateStock(@RequestBody Stock stock) {
+        stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
+        return stockRepository.save(stock);
+    }
+
     @DeleteMapping("/delete/{id}")
     public Stock deleteStockById(@PathVariable Long id) {
         Stock stock = stockRepository.findById(id).orElseThrow(StockNotFoundException::new);
         stockRepository.deleteById(id);
         return stock;
-    }
-
-    @PutMapping("/{id}")
-    public Stock updateStock(@RequestBody Stock stock) {
-        stockRepository.findById(stock.getId()).orElseThrow(StockNotFoundException::new);
-        return stockRepository.save(stock);
     }
 }
 

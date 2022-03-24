@@ -5,7 +5,7 @@
     border-radius: 25px;
     align-items: center;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    margin: 7px;
+    margin: 2px;
     transition: all 0.25s;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
     min-width: 130px;
     height: 40px;
     text-align-last: center;
-    font-family: "Roboto Light", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
     padding: 5px 10px;
     font-weight: bold;
