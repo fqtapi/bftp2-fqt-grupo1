@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import React, {useEffect, useState} from "react";
 import StockTable from "./table/StockTable";
 import StocksApi from "./apis/StocksApi";
+import Register from "./components/login/Register";
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/auth/signup" element={<Register />}/>
                     <Route path="/stocks" element={<StockTable stocks={stocks} deleteStock={deleteStock}/>}/>
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>

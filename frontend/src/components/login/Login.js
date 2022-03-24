@@ -1,11 +1,9 @@
 import './Login.css';
 import logo from "../../assets/logo/fqtlogo.png";
 import React, {useState, useRef} from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import AuthService from "../../services/auth.service";
 import authService from "../../services/auth.service";
+
+
 
 const required = (value) => {
     if (!value) {
@@ -18,11 +16,8 @@ const required = (value) => {
 };
 const Login = (props) => {
     const form = useRef();
-    const checkBtn = useRef();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
     const onChangeUsername = (e) => {
         const username = e.target.value;
         setUsername(username);
@@ -56,18 +51,17 @@ const Login = (props) => {
 
                 <span><label className="label-login" htmlFor="passwordInput">Contraseña:  </label>
                     <input className="input-login"
-                           type="password"  name="password"
+                           type="password" name="password"
                            value={password}
                            onChange={onChangePassword}
                            validations={[required]}
                     /></span>
 
                 <input className="css-button-rounded--red" type="submit" value="Acceder"/>
-
             </form>
         </div>
-)
-    ;
+    )
+        ;
 }
 
 export default Login;

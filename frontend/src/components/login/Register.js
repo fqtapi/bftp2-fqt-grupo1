@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
+import {isEmail} from "validator";
 import AuthService from "../../services/auth.service";
 const required = (value) => {
     if (!value) {
@@ -87,21 +87,17 @@ const Register = (props) => {
         }
     };
     return (
-        <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card"
-                />
-                <Form onSubmit={handleRegister} ref={form}>
+        <div className="login">
+            <div className="">
+
+                <Form className="login-form" onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
                                 <label htmlFor="username">Username</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="input-login"
                                     name="username"
                                     value={username}
                                     onChange={onChangeUsername}
@@ -112,7 +108,7 @@ const Register = (props) => {
                                 <label htmlFor="email">Email</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="input-login"
                                     name="email"
                                     value={email}
                                     onChange={onChangeEmail}
@@ -123,7 +119,7 @@ const Register = (props) => {
                                 <label htmlFor="password">Password</label>
                                 <Input
                                     type="password"
-                                    className="form-control"
+                                    className="input-login"
                                     name="password"
                                     value={password}
                                     onChange={onChangePassword}
@@ -131,7 +127,7 @@ const Register = (props) => {
                                 />
                             </div>
                             <div className="form-group">
-                                <button className="btn btn-primary btn-block">Sign Up</button>
+                                <button className="css-button-rounded--red">Sign Up</button>
                             </div>
                         </div>
                     )}

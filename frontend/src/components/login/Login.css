@@ -1,20 +1,16 @@
 .logo-fqt-log {
-    width: 25%;
+    width: 10%;
 }
 .login-title {
     margin-top: 10px;
     color: black;
     font-family: 'Roboto Serif', serif;
 }
-.login-section {
+.login {
     display: flex;
     flex-direction: column;
-    margin-left: 50%;
-    transform: translate(-50%, 15%);
-    margin-top: 5%;
     align-items: center;
-    margin-bottom: 10%;
-
+    margin-top: 3%;
 }
 
 .login-form {
@@ -44,7 +40,7 @@
     box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.css-button-rounded--red {
+    .css-button-rounded--red, .css-button-rounded--reg {
     min-width: 130px;
     height: 40px;
     text-align-last: center;
@@ -64,6 +60,11 @@
 }
 
 .css-button-rounded--red:hover {
+    background: #fff;
+    color: #F1654B
+}
+
+.css-button-rounded--reg:hover {
     background: #fff;
     color: #F1654B
 }

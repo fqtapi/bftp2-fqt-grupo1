@@ -5,13 +5,18 @@ import {Link} from "react-router-dom";
 import logo from "../../assets/logo/fqtlogo.png";
 import './Navbar.css';
 
-function Navbar() {
 
+
+function Navbar() {
+    const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [clicked, setClicked] = useState(false)
     const handleClick = () => {
         setClicked(!clicked)
     }
-
+    const logout = () => {
+        localStorage.removeItem("user"
+       .then(_ => setRequiresUpdate(true)))
+    };
     return (
             <NavContainer>
                 <div className='brand'>
@@ -27,6 +32,12 @@ function Navbar() {
                     <div className={`links ${clicked ? 'active' : ''}`}>
                         <Link to="/new">
                             <button className="css-button-rounded--red">Añadir Nuevo</button>
+                        </Link>
+                        <Link to="/auth/signup">
+                            <button className="css-button-rounded--red">Registrar Usuario</button>
+                        </Link>
+                        <Link to="/login">
+                            <button className="css-button-rounded--red" onClick={logout}>Salir</button>
                         </Link>
 
                     </div>
