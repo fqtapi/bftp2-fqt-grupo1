@@ -82,9 +82,10 @@ export const New = (props) => {
                                        id="cantidad"
                                        name="cantidad"/>
                             </div>
+                            <span><div className="input-add-subtract">
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Cantidad a sumar</label>
+                                <label htmlFor="">Sumar</label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.add}
@@ -95,7 +96,7 @@ export const New = (props) => {
                             </div>
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Cantidad a restar</label>
+                                <label htmlFor="">Restar</label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.subtract}
@@ -104,6 +105,8 @@ export const New = (props) => {
                                        id="subtract"
                                        name="subtract"/>
                             </div>
+                            </div></span>
+
 
                             <div className="btn-edit-container">
                                 <button type="submit" className="css-button-rounded--red">Guardar</button>
