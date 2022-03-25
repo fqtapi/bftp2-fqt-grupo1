@@ -59,6 +59,7 @@ export const New = (props) => {
                                        id="descripcion"
                                        name="descripcion"/>
                             </div>
+
                             <div className="stock-form-group">
                                 <label htmlFor="">Categoría</label>
                                 <select value={datos.category} className="stock-form-control"

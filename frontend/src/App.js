@@ -25,6 +25,7 @@ function App() {
             return stocksApi.getStocks()
                 .then(setStocks)
             .then(_ => setRequiresUpdate(false));
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }
     }, [requiresUpdate, loggedIn])
 
@@ -37,11 +38,16 @@ function App() {
     const deleteStock = (stock) => {
         return stocksApi.deleteStock(stock)
             .then(_ => setRequiresUpdate(true))
+
     }
 
     const onCategoryClicked = (category) => {
         stocksApi.getStocks(category)
             .then(datos => setStocks(datos))
+    }
+    const addUser = (user) => {
+        return stocksApi.addUser(user)
+            .then(_ => setRequiresUpdate(true))
     }
 
 
@@ -53,7 +59,7 @@ function App() {
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/auth/signup" element={<Register />}/>
+                    <Route path="/auth/signup" element={<Register addUser={addUser}/>}/>
                     <Route path="/stocks" element={<StockTable stocks={stocks} deleteStock={deleteStock}/>}/>
                     <Route path='*' element={<Navigate replace to="/"/>}/>
                 </Routes>
