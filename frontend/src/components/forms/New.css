@@ -1,5 +1,5 @@
 .stock-form-wrapper {
-text-align: center;
+    text-align: center;
 }
 
 .section-form-stock {
@@ -15,7 +15,7 @@ text-align: center;
 }
 
 .stock-form-section {
-    width: 45%;
+    width: 35vw;
     padding: 20px 20px 2px 20px;
     border-radius: 10px;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -37,6 +37,7 @@ text-align: center;
 
 .stock-form-group {
     margin-bottom: 15px;
+    padding: 0 5vw 0;
     display: flex;
     font-size: 20px;
     justify-content: space-between;
@@ -58,7 +59,34 @@ text-align: center;
     justify-content: space-between;
 }
 
+.stock-form-calculo {
+    display: flex;
+
+}
+
+.stock-form-calculo input {
+    width: 4vw;
+    font-family: "Roboto Light", sans-serif;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ccc7c7;
+    padding: 5px;
+    margin-left: 5px;
+    background-color: #EFEFEF;
+    -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+}
+
 .stock-form-group input:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F1654B;
+}
+
+.stock-form-calculo input:hover {
     cursor: pointer;
     border-style: solid;
     border-width: 2px;
@@ -78,6 +106,7 @@ text-align: center;
     border: 1px solid #ccc7c7;
 }
 
+
 textarea:hover {
     cursor: pointer;
     border-style: solid;
@@ -88,6 +117,7 @@ textarea:hover {
 .add-stock-form {
     margin-bottom: 20px;
 }
+
 .css-button-rounded--red {
     min-width: 130px;
     height: 40px;
@@ -107,22 +137,43 @@ textarea:hover {
     background: #F1654B;
 }
 
+
 .css-button-rounded--red:hover {
     background: #fff;
     color: #F1654B
 }
+
 .input-add-subtract {
-display: flex;
+    display: flex;
+    padding: 3vw 8vw 3vw;
 
 }
+
 #category {
     width: 59%;
 }
 
 .add-input {
-width: 25%;
+    width: 25%;
 }
+
 .label-add {
     align-self: center;
-    margin-left: 20px;
+    margin-left: 35px;
+}
+
+
+.calculo-suma {
+    color: green;
+    font-size: 45px;
+}
+
+.calculo-resta {
+    color: red;
+    font-size: 45px;
+}
+
+.option {
+    font-family: "Roboto Light", sans-serif;
+    font-size: 20px;
 }

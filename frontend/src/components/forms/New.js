@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import "./New.css"
+import {FaRegPlusSquare} from 'react-icons/fa';
+import {FaRegMinusSquare} from 'react-icons/fa';
 import {useLocation, useNavigate} from "react-router-dom";
 
 
@@ -87,8 +89,8 @@ export const New = (props) => {
 
                            <div className="input-add-subtract">
 
-                           <span className="add-span"> <div className="stock-form-group">
-                                <label className="label-add" htmlFor="">Sumar</label>
+                           <div className="stock-form-calculo">
+                                <label className="label-add" htmlFor=""><FaRegPlusSquare className="calculo-suma"/></label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.add}
@@ -96,10 +98,10 @@ export const New = (props) => {
                                        onChange={handleInputChange}
                                        id="add"
                                        name="add"/>
-                            </div></span>
+                            </div>
 
-                               <span className="add-span"><div className="stock-form-group">
-                                <label className="label-add" htmlFor="">Restar</label>
+                               <div className="stock-form-calculo">
+                                <label className="label-add" htmlFor=""><FaRegMinusSquare className="calculo-resta"/></label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.subtract}
@@ -107,7 +109,7 @@ export const New = (props) => {
                                        onChange={handleInputChange}
                                        id="subtract"
                                        name="subtract"/>
-                            </div></span>
+                            </div>
                             </div>
 
 
