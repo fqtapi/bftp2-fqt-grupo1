@@ -1,4 +1,6 @@
 import axios from "axios";
+
+
 const API_URL = "/auth/";
 
 const register = (username, email, password) => {
@@ -27,9 +29,12 @@ const logout = () => {
 const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
 };
-export default {
+
+const exportedObject = {
     register,
     login,
     logout,
     getCurrentUser,
 };
+export default exportedObject;
+

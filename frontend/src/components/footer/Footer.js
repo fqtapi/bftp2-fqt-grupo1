@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className="footer">
             <div className="thin">
-                <img src={logo} className="footer-logo"/>
+                <img src={logo} className="footer-logo" alt="Logo FQT"/>
                 <h4> FUNDACION QUIERO TRABAJO</h4>
             </div>
             <div className="wide">

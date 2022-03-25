@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Table.css";
 import {FaEdit} from 'react-icons/fa';
 import {FaRegTrashAlt} from 'react-icons/fa';

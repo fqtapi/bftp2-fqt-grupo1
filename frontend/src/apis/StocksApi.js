@@ -1,5 +1,6 @@
 class StocksApi {
     STOCKS_API_URL = "/api/stocks";
+    API_URL = "/auth/";
 
     dameMiPincheToken() {
         let userData = JSON.parse(localStorage.getItem("user"));
@@ -51,7 +52,18 @@ class StocksApi {
         )
     }
 
-
+    addUser(user) {
+        return fetch(this.API_URL,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": this.dameMiPincheToken()
+                },
+                body: JSON.stringify(user)
+            }
+        )
+    }
 }
 
 export default StocksApi;

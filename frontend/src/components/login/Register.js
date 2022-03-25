@@ -4,6 +4,8 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import {isEmail} from "validator";
 import AuthService from "../../services/auth.service";
+
+
 const required = (value) => {
     if (!value) {
         return (
@@ -127,7 +129,7 @@ const Register = (props) => {
                                 />
                             </div>
                             <div className="form-group">
-                                <button className="css-button-rounded--red">Sign Up</button>
+                                <button type="submit" className="css-button-rounded--red">Sign Up</button>
                             </div>
                         </div>
                     )}
