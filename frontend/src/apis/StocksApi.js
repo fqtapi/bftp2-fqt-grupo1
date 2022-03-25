@@ -42,7 +42,11 @@ class StocksApi {
     deleteStock(id) {
         return fetch(`${this.STOCKS_API_URL}/delete/${id}`,
             {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": this.dameMiPincheToken()
+                }
             }
         )
     }
