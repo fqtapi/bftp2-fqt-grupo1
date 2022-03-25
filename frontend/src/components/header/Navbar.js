@@ -8,7 +8,7 @@ import './Navbar.css';
 
 
 function Navbar() {
-    const [requiresUpdate, setRequiresUpdate] = useState(true);
+    const [setRequiresUpdate] = useState(true);
     const [clicked, setClicked] = useState(false)
     const handleClick = () => {
         setClicked(!clicked)
