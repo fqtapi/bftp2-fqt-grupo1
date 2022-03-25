@@ -25,6 +25,7 @@ function App() {
             return stocksApi.getStocks()
                 .then(setStocks)
             .then(_ => setRequiresUpdate(false));
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }
     }, [requiresUpdate, loggedIn])
 

@@ -1,6 +1,7 @@
 .idea
 .gradle
 .gitignore
+.static
 node_modules
 HELP.md
 
