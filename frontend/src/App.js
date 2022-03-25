@@ -11,6 +11,7 @@ import StocksApi from "./apis/StocksApi";
 import Register from "./components/login/Register";
 
 
+
 function App() {
 
     const stocksApi = new StocksApi();

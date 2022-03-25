@@ -3,6 +3,7 @@ import "./New.css"
 import {useLocation, useNavigate} from "react-router-dom";
 
 
+
 export const New = (props) => {
 
     let navigate = useNavigate();
@@ -83,10 +84,11 @@ export const New = (props) => {
                                        id="cantidad"
                                        name="cantidad"/>
                             </div>
-                            <span><div className="input-add-subtract">
 
-                            <div className="stock-form-group">
-                                <label htmlFor="">Sumar</label>
+                           <div className="input-add-subtract">
+
+                           <span className="add-span"> <div className="stock-form-group">
+                                <label className="label-add" htmlFor="">Sumar</label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.add}
@@ -94,10 +96,10 @@ export const New = (props) => {
                                        onChange={handleInputChange}
                                        id="add"
                                        name="add"/>
-                            </div>
+                            </div></span>
 
-                            <div className="stock-form-group">
-                                <label htmlFor="">Restar</label>
+                               <span className="add-span"><div className="stock-form-group">
+                                <label className="label-add" htmlFor="">Restar</label>
                                 <input type="text"
                                        className="stock-form-control add-input"
                                        value={datos.subtract}
@@ -105,8 +107,8 @@ export const New = (props) => {
                                        onChange={handleInputChange}
                                        id="subtract"
                                        name="subtract"/>
-                            </div>
                             </div></span>
+                            </div>
 
 
                             <div className="btn-edit-container">

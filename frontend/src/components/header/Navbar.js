@@ -17,6 +17,7 @@ function Navbar() {
         localStorage.removeItem("user"
        .then(_ => setRequiresUpdate(true)))
     };
+
     return (
             <NavContainer>
                 <div className='brand'>
