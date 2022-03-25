@@ -36,7 +36,7 @@ function App() {
             .then(_ => setRequiresUpdate(true))
     }
 
-    const deleteStock = (stock) => {
+    const deleteStock = (stock, category) => {
         return stocksApi.deleteStock(stock)
             .then(_ => setRequiresUpdate(true))
 
