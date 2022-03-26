@@ -5,7 +5,6 @@ import {FaRegMinusSquare} from 'react-icons/fa';
 import {useLocation, useNavigate} from "react-router-dom";
 
 
-
 export const New = (props) => {
 
     let navigate = useNavigate();
@@ -44,7 +43,7 @@ export const New = (props) => {
                         <form className="edit-stock-form" onSubmit={enviarDatos} action="">
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Código</label>
+                                <label htmlFor="">Código:</label>
                                 <input type="text"
                                        className="stock-form-control"
                                        value={datos.codigo}
@@ -54,7 +53,7 @@ export const New = (props) => {
                             </div>
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Descripción</label>
+                                <label htmlFor="">Descripción:</label>
                                 <input type="text"
                                        className="stock-form-control"
                                        value={datos.descripcion}
@@ -64,12 +63,12 @@ export const New = (props) => {
                             </div>
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Categoría</label>
+                                <label htmlFor="">Categoría:</label>
                                 <select value={datos.category} className="stock-form-control"
                                         onChange={handleInputChange}
                                         name="category"
                                         id="category">
-                                    <option>Seleccionar Categoría</option>
+                                    <option className="select-cat">Seleccionar Categoría</option>
                                     <option value="Prendas">Prendas</option>
                                     <option value="Complementos">Complementos</option>
                                     <option value="Cosmeticos">Cosméticos</option>
@@ -77,7 +76,7 @@ export const New = (props) => {
                             </div>
 
                             <div className="stock-form-group">
-                                <label htmlFor="">Cantidad</label>
+                                <label htmlFor="">Cantidad:</label>
                                 <input type="text"
                                        className="stock-form-control"
                                        value={datos.cantidad}
@@ -87,29 +86,30 @@ export const New = (props) => {
                                        name="cantidad"/>
                             </div>
 
-                           <div className="input-add-subtract">
+                            <div className="input-add-subtract">
 
-                           <div className="stock-form-calculo">
-                                <label className="label-add" htmlFor=""><FaRegPlusSquare className="calculo-suma"/></label>
-                                <input type="text"
-                                       className="stock-form-control add-input"
-                                       value={datos.add}
-                                       min="1" max="10000"
-                                       onChange={handleInputChange}
-                                       id="add"
-                                       name="add"/>
-                            </div>
+                                <div className="stock-form-calculo">
+                                    <label className="label-add" htmlFor=""><FaRegPlusSquare className="calculo-suma"/></label>
+                                    <input type="text"
+                                           className="stock-form-control add-input"
+                                           value={datos.add}
+                                           min="1" max="10000"
+                                           onChange={handleInputChange}
+                                           id="add"
+                                           name="add"/>
+                                </div>
 
-                               <div className="stock-form-calculo">
-                                <label className="label-add" htmlFor=""><FaRegMinusSquare className="calculo-resta"/></label>
-                                <input type="text"
-                                       className="stock-form-control add-input"
-                                       value={datos.subtract}
-                                       min="1" max="10000"
-                                       onChange={handleInputChange}
-                                       id="subtract"
-                                       name="subtract"/>
-                            </div>
+                                <div className="stock-form-calculo">
+                                    <label className="label-add" htmlFor=""><FaRegMinusSquare
+                                        className="calculo-resta"/></label>
+                                    <input type="text"
+                                           className="stock-form-control add-input"
+                                           value={datos.subtract}
+                                           min="1" max="10000"
+                                           onChange={handleInputChange}
+                                           id="subtract"
+                                           name="subtract"/>
+                                </div>
                             </div>
 
 

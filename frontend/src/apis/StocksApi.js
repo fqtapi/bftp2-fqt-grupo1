@@ -21,6 +21,7 @@ class StocksApi {
         }
         return fetch(this.STOCKS_API_URL, {
             headers: {
+                'Content-Type': 'application/json',
                 "Authorization": this.dameMiPincheToken()
             }
         })

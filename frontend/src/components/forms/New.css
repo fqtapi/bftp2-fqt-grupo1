@@ -15,7 +15,7 @@
 }
 
 .stock-form-section {
-    width: 35vw;
+    width: 50vw;
     padding: 20px 20px 2px 20px;
     border-radius: 10px;
     -webkit-box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -47,6 +47,7 @@
 .stock-form-group input {
     width: 57%;
     font-family: "Roboto Light", sans-serif;
+    font-size: 15px;
     height: 25px;
     border-radius: 5px;
     border: 1px solid #ccc7c7;
@@ -97,7 +98,7 @@
     background-color: #ccc7c7;
     padding: 3px;
     font-family: "Roboto Light", sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 5px;
     width: 57%;
     overflow: hidden;
@@ -145,21 +146,24 @@ textarea:hover {
 
 .input-add-subtract {
     display: flex;
-    padding: 3vw 8vw 3vw;
-
+    padding: 2vw;
+    justify-content: center;
 }
 
 #category {
-    width: 59%;
+    width: 60%;
+    height: 38px;
 }
 
 .add-input {
     width: 25%;
+    font-size: 15px;
 }
 
 .label-add {
     align-self: center;
     margin-left: 35px;
+    padding-top: 3px;
 }
 
 
@@ -173,7 +177,7 @@ textarea:hover {
     font-size: 45px;
 }
 
-.option {
+.select-cat {
     font-family: "Roboto Light", sans-serif;
-    font-size: 20px;
+    font-size: 15px;
 }
