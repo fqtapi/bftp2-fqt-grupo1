@@ -15,7 +15,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(
+        // in order to not apply the OncePerRequestFilter,
+        // i.e. no security
+        addFilters = false
+)
 class IntegrationTests {
 
     @Autowired
@@ -30,7 +34,7 @@ class IntegrationTests {
     }
 
 
-   /* @Test
+   @Test
     void podemosModificarLaCantidadDeUnStock() throws Exception {
         Stock stock = new Stock();
         stock.setCantidad(10);
@@ -44,7 +48,7 @@ class IntegrationTests {
         Stock stockModificado = stockRepository.findById(stockGuardado.getId()).get();
 
         assertThat(stockModificado.getCantidad(), equalTo(11));
-    }*/
+    }
 
 }
 
