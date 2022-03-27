@@ -1,11 +1,6 @@
 {
   "engines": {
     "node": "16.x"
-  },
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "uuid": "^8.3.2"
   }
+
 }
