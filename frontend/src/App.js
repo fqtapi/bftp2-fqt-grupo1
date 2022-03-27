@@ -9,6 +9,7 @@ import React, {useEffect, useState} from "react";
 import StockTable from "./table/StockTable";
 import StocksApi from "./apis/StocksApi";
 import Register from "./components/login/Register";
+import Profile from "./components/login/Profile";
 
 
 
@@ -59,6 +60,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home onCategoryClicked={onCategoryClicked}/>}/>
                     <Route path="/new" element={<New addStock={addStock}/>}/>
+                    <Route path="/profile" element={<Profile/> }/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/auth/signup" element={<Register addUser={addUser}/>}/>
                     <Route path="/stocks" element={<StockTable stocks={stocks} deleteStock={deleteStock}/>}/>

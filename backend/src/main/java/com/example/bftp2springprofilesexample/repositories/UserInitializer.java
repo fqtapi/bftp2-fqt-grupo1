@@ -52,11 +52,6 @@ public class UserInitializer {
 
     private void createAdminUser() {
 
-        if (userRegistrationService.anyUserExists()) {
-            logger.info("A user already exists! Skipping creating admin user");
-            return;
-        }
-
 
         String password = generateCommonLangPassword();
 
@@ -65,9 +60,12 @@ public class UserInitializer {
                 "admin@example.com",
                 Set.of("admin"),
                 password
+
         );
 
         logger.info("Generated Password for admin user: " + password);
+
+
 
     }
 
