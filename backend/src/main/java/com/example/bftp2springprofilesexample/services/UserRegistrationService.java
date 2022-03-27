@@ -1,18 +1,14 @@
 package com.example.bftp2springprofilesexample.services;
 
-import com.example.bftp2springprofilesexample.configuration.JwtUtils;
+
 import com.example.bftp2springprofilesexample.controllers.MessageResponse;
-import com.example.bftp2springprofilesexample.controllers.SignupRequest;
 import com.example.bftp2springprofilesexample.models.Role;
 import com.example.bftp2springprofilesexample.models.User;
 import com.example.bftp2springprofilesexample.repositories.RoleRepository;
 import com.example.bftp2springprofilesexample.repositories.UserRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
 import java.util.HashSet;
 import java.util.Set;
 
