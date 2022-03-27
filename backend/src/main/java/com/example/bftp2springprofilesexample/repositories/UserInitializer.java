@@ -52,10 +52,10 @@ public class UserInitializer {
 
     private void createAdminUser() {
 
-        /* if (userRegistrationService.anyUserExists()) {
+        if (userRegistrationService.anyUserExists()) {
             logger.info("A user already exists! Skipping creating admin user");
             return;
-        }*/
+        }
 
 
         String password = generateCommonLangPassword();
