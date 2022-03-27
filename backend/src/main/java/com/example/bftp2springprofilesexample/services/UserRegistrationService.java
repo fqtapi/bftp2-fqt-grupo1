@@ -74,7 +74,7 @@ public class UserRegistrationService {
 
     public boolean anyUserExists() {
 
-        return userRepository.findAll().isEmpty();
+        return !userRepository.findAll().isEmpty();
     }
 
 }
