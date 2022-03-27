@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+![](/home/lap-bcn-031/IdeaProjects/bftp2-fqt-grupo1/frontend/src/assets/logo/readme-img.png)
+# Fundación Quiero Trabajo
+# FullStack API (SpringBoot + React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Repositorio del proyecto
+https://github.com/desimorenoh/bftp2-fqt-grupo1
 
-## Available Scripts
+## Ver Demo en:
+[www.fquierotrabajo.com ](https://bftp2-fqt-grupo1.herokuapp.com/)
 
-In the project directory, you can run:
+## Stack 🛠️
+Java
+Spring Boot
+Spring JWT Security
+H2
+Postgres
+Gradle
+React
+HTML5
+CSS3
+Javascript
+Heroku
 
-### `npm start`
+### Estructura 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- La carpeta `banckend` contiene el backend (Java, Spring Boot, Spring JWT Security)
+- La carpeta `frontend` contiene el frontend, que se compila usando `npm` y `webpack`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Desarrollo
 
-### `npm test`
+### Compilación y puesta en marcha 🚀
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para compilar todo el código (frontend y backend), podemos usar las tareas `buildFrontend`, `build` y `bootRun` de Gradle.
 
-### `npm run build`
+- Desde línea de comandos:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Usamos "gradlew.bat" en lugar de ./gradlew en Windows
+./gradlew buildFrontend build bootRun
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Desde IntelliJ usando el menú de Gradle
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Trabajando con el frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para trabajar con el frontend usar comandos `npm`  desde la carpeta frontend (`cd frontend`).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para no lanzar el servidor para visualizar un cambio en
+el frontend, es posible usar **webpack dev server**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Desde la carpeta `frontend`, hacemos:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm run develop
+```
 
-## Learn More
+De este modo se pueden hacer pruebas en `localhost:3000` (o configurar el puerto en el archivo `webpack.config.js`).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Base de datos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este proyecto incluye una base de datos en memoria H2. Puede modificarse la configuración para sustituir esta base de datos
+por una base de datos diferente.
 
-### Code Splitting
+- Panel de H2: Una vez arrancada la aplicación (`bootRun`), puede accederse al panel de configuración
+  de H2 disponible en `/h2-ui`. Para hacer login se debe usar la misma configuración de `application.properties`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  
+## Deploy a Heroku con Postgres
 
-### Analyzing the Bundle Size
+Se realizó deploy a heroku, para hacer push hay que hacer el commit y luego desde el terminal 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git push heroku main
+```
 
-### Making a Progressive Web App
+Para abrir la aplicación en Heroku ejecutar desde el terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+heroku open
+```
 
-### Advanced Configuration
+### Equipo de desarrollo ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [Alexia Cabre ](https://github.com/ALEXIABCN)
+- [Carmen Gamarra](https://github.com/Cgammarr)
+- [Desirée Moreno Hernández](https://github.com/desimorenoh)
+- [Judith Quiñe](https://github.com/judithquine)
+- [Laura Contreras](https://github.com/Lalu163)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Expresiones de Gratitud 🎁
+- [Fundación Quiero Trabajo](https://www.quierotrabajo.org/)
+- [FactoríaF5](https://github.com/FactoriaF5Code)
+- [Marta Sastre](https://github.com/msastreharo)
+- [Javi Sánchez](https://github.com/jsrois)
