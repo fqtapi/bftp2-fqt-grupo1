@@ -27,7 +27,7 @@ const StockTable = ({stocks, deleteStock}) => {
                     </tr>
 
                     {stocks
-                        // sort by codigo
+
                         .map(stock =>
                             <tr className='category-table-row' key={stock.id} stock={stock}>
                                 <td className="category-td">{stock.codigo}</td>
@@ -40,14 +40,16 @@ const StockTable = ({stocks, deleteStock}) => {
 
                                 <td className="category-td-link">
 
-                                    <Link className="btn-orange-link"  to="/new"
-                                          state={{data: stock}}><FaEdit className="edit-pen" fixedWidth style={{color: 'blue'}}/></Link>
+                                    <Link className="btn-orange-link" to="/new"
+                                          state={{data: stock}}><FaEdit className="edit-pen" fixedWidth
+                                                                        style={{color: 'blue'}}/></Link>
                                     <div className="code2">Modificar</div>
                                 </td>
 
                                 <td className="category-td-delete">
-                                    <FaRegTrashAlt className="delete-trash" onClick={() => deleteStock(stock.id)} fixedWidth
-                                                   style={{color: 'red'}} />
+                                    <FaRegTrashAlt className="delete-trash" onClick={() => deleteStock(stock.id)}
+                                                   fixedWidth
+                                                   style={{color: 'red'}}/>
                                     <div className="code3">Eliminar</div>
                                 </td>
                             </tr>

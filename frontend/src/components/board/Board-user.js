@@ -8,6 +8,7 @@ export default class BoardUser extends Component {
             content: ""
         };
     }
+
     componentDidMount() {
         UserService.getUserBoard().then(
             response => {
@@ -27,6 +28,7 @@ export default class BoardUser extends Component {
             }
         );
     }
+
     render() {
         return (
             <div className="container">

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, {useState, useRef} from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -130,21 +130,21 @@ const Register = (props) => {
                                 />
                             </div>
                             <div className="form-group">
-                                <button type="submit" className="css-button-rounded--red">Sign Up</button>
+                                <button type="submit" className="css-button-rounded--red">Guardar</button>
                             </div>
                         </div>
                     )}
                     {message && (
                         <div className="form-group">
                             <div
-                                className={ successful ? "alert alert-success" : "alert alert-danger" }
+                                className={successful ? "alert alert-success" : "alert alert-danger"}
                                 role="alert"
                             >
                                 {message}
                             </div>
                         </div>
                     )}
-                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
+                    <CheckButton style={{display: "none"}} ref={checkBtn}/>
                 </Form>
             </div>
         </div>

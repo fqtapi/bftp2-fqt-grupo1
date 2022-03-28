@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         // i.e. no security
         addFilters = false
 )
-class IntegrationTests {
+class ApplicationTests {
 
     @Autowired
     private StockRepository stockRepository;
@@ -54,16 +54,16 @@ class IntegrationTests {
         assertThat(stocks, hasSize(0));
     }
 
-   @Test
+    @Test
     void allowsToModifyTheQuantityOfAnyStock() throws Exception {
         Stock stock = new Stock();
         stock.setCantidad(10);
         Stock stockGuardado = stockRepository.save(stock);
 
         api.perform(put("/api/stocks")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"id\": "+stockGuardado.getId()+",\"cantidad\": 11 }")
-                );
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"id\": " + stockGuardado.getId() + ",\"cantidad\": 11 }")
+        );
 
         Stock stockModificado = stockRepository.findById(stockGuardado.getId()).get();
 
@@ -86,19 +86,20 @@ class IntegrationTests {
 
         assertThat(stockModificado.getDescripcion(), equalTo("Abrigos"));
     }
+
     @Test
     @WithMockUser
     void allowsToCreateANewStock() throws Exception {
 
         api.perform(post("/api/stocks/")
-                .with(csrf())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"codigo\": \"Prendas01\", " +
-                        "\"descripcion\": \"Abrigos\"," +
-                        "\"category\": \"Prendas\"," +
-                        "\"cantidad\": 1 }" +
-                        "\"add\": 0 }" +
-                        "\"subtract\": 0 }"))
+                        .with(csrf())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"codigo\": \"Prendas01\", " +
+                                "\"descripcion\": \"Abrigos\"," +
+                                "\"category\": \"Prendas\"," +
+                                "\"cantidad\": 1 }" +
+                                "\"add\": 0 }" +
+                                "\"subtract\": 0 }"))
                 .andExpect(status().isOk());
 
         List<Stock> stocks = stockRepository.findAll();
@@ -120,7 +121,7 @@ class IntegrationTests {
 
         addSampleStocks();
 
-        this.api.perform(get("/api/stocks"))
+        api.perform(get("/api/stocks"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[*]", hasSize(2)))
                 .andExpect(jsonPath("$[0].codigo", equalTo("Prendas01")))

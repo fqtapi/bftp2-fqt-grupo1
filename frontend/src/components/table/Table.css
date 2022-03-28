@@ -53,6 +53,7 @@ i {
     border-bottom: 1px solid rgba(0, 0, 0, .3);
     color: #000000;
     border-top: 1px solid transparent;
+    text-align: center;
 }
 
 .category-td:hover {
@@ -133,23 +134,22 @@ i {
 }
 
 
-
 .code2 {
     display: none;
     position: absolute;
     font-size: 14px;
-    top:28px;
-    left:25px;
-    background-color:lightgray;
+    top: 28px;
+    left: 25px;
+    background-color: lightgray;
 }
 
 .code3 {
     display: none;
     position: absolute;
     font-size: 14px;
-    top:28px;
-    left:25px;
-    background-color:lightgray;
+    top: 28px;
+    left: 25px;
+    background-color: lightgray;
 }
 
 .category-td-link:hover .code2 {

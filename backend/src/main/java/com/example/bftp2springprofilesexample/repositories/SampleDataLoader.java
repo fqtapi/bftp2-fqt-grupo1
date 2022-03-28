@@ -22,7 +22,7 @@ public class SampleDataLoader {
     @PostConstruct
     public void loadSampleData() {
         stockRepository.saveAll(List.of(
-                new Stock(1L, "Prendas01", "Abrigos", "Prendas", 0,0,0),
+                new Stock(1L, "Prendas01", "Abrigos", "Prendas", 0, 0, 0),
                 new Stock(2L, "Prendas02", "Chaquetas y americanas", "Prendas",0, 0,0),
                 new Stock(3L, "Prendas03", "Faldas", "Prendas",0,0,0),
                 new Stock(4L, "Prendas04", "Pantalones", "Prendas", 0, 0, 0),

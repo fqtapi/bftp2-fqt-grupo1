@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import UserService from "../../services/user.service";
 
 export default class BoardAdmin extends Component {
@@ -8,6 +8,7 @@ export default class BoardAdmin extends Component {
             content: ""
         };
     }
+
     componentDidMount() {
         UserService.getAdminBoard().then(
             response => {
@@ -27,6 +28,7 @@ export default class BoardAdmin extends Component {
             }
         );
     }
+
     render() {
         return (
             <div className="container">

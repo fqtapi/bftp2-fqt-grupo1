@@ -3,7 +3,7 @@ package com.example.bftp2springprofilesexample.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="stocks")
+@Table(name = "stocks")
 public class Stock {
 
     @Id

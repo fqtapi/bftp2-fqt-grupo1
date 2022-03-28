@@ -33,7 +33,7 @@ public class StockController {
     }
 
     @GetMapping("/{id}")
-    public Stock findStock(@PathVariable Long id){
+    public Stock findStock(@PathVariable Long id) {
         return stockRepository.findById(id).orElseThrow(null);
     }
 

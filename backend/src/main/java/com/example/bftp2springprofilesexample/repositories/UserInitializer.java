@@ -36,7 +36,7 @@ public class UserInitializer {
     }
 
 
-    private void addAvailableRoles(){
+    private void addAvailableRoles() {
         if (!roleRepository.findAll().isEmpty()) {
             return;
         }

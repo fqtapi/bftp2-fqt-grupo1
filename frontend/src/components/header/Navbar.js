@@ -8,14 +8,9 @@ import './Navbar.css';
 
 
 function Navbar() {
-    const [setRequiresUpdate] = useState(true);
-    const [clicked, setClicked] = useState(false)
-    const handleClick = () => {
-        setClicked(!clicked)
-    }
+
     const logout = () => {
-        localStorage.removeItem("user"
-       .then(_ => setRequiresUpdate(true)))
+        localStorage.removeItem("user");
     };
     return (
             <NavContainer>
@@ -28,8 +23,7 @@ function Navbar() {
                     </Link>
 
                 </div>
-                <div className={`links ${clicked ? 'active' : ''}`}>
-                    <div className={`links ${clicked ? 'active' : ''}`}>
+                <div className="navbar-menu">
                         <Link to="/new">
                             <button className="css-button-rounded--red">Añadir Nuevo</button>
                         </Link>
@@ -39,13 +33,7 @@ function Navbar() {
                         <Link to="/login">
                             <button className="css-button-rounded--red" onClick={logout}>Salir</button>
                         </Link>
-
                     </div>
-                </div>
-                <div className='burguer'>
-                    <BurguerButton clicked={clicked} handleClick={handleClick}/>
-                </div>
-                <BgDiv className={`initial ${clicked ? ' active' : ''}`}/>
             </NavContainer>
 
     )

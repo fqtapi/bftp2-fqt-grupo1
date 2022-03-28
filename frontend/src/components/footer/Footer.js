@@ -11,7 +11,8 @@ function Footer() {
                 <h4> FUNDACION QUIERO TRABAJO</h4>
             </div>
             <div className="wide">
-                <p className="footer-p"> Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos Reservados </p>
+                <p className="footer-p"> Copyright &copy;2022 Fundación Quiero Trabajo | Todos los Derechos
+                    Reservados </p>
             </div>
             <div className="thinner">
                 <ul>
