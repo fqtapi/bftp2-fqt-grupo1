@@ -1,4 +1,5 @@
 package com.example.bftp2springprofilesexample;
+
 import com.example.bftp2springprofilesexample.models.Stock;
 import com.example.bftp2springprofilesexample.repositories.StockRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,19 +10,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-
 
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc(
@@ -43,7 +41,7 @@ class IntegrationTests {
         stockRepository.deleteAll();
     }
 
-    /*@Test
+    @Test
     @WithMockUser
     void allowsToDeleteAnExistingStock() throws Exception {
 
@@ -54,7 +52,7 @@ class IntegrationTests {
 
         List<Stock> stocks = stockRepository.findAll();
         assertThat(stocks, hasSize(0));
-    }*/
+    }
 
    @Test
     void allowsToModifyTheQuantityOfAnyStock() throws Exception {
@@ -72,9 +70,9 @@ class IntegrationTests {
         assertThat(stockModificado.getCantidad(), equalTo(11));
     }
 
-  /*  @Test
+    @Test
     @WithMockUser
-    void allowsToModifyAnExistinStock() throws Exception {
+    void allowsToModifyAnyStock() throws Exception {
         Stock stock = new Stock();
         stock.setDescripcion("Abrigos");
         Stock stockGuardado = stockRepository.save(stock);
@@ -87,35 +85,20 @@ class IntegrationTests {
         Stock stockModificado = stockRepository.findById(stockGuardado.getId()).get();
 
         assertThat(stockModificado.getDescripcion(), equalTo("Abrigos"));
-    }*/
-    /*@Test
-    void allowsToCreateANewStock() throws Exception {
-
-        api.perform(post("/new")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"codigo\": \"Prendas01\", " +
-                        "\"descripcion\": \"Abrigos\"," +
-                        "\"categoria\": \"Prendas\"," +
-                        "\"cantidad\": 1 }"))
-                .andExpect(status().isOk());
-
-        List<Stock> stocks = stockRepository.findAll();
-        assertThat(stocks, hasSize(1));
-        assertThat(stocks, contains(allOf(
-                hasProperty("codigo", is("Prendas01")),
-                hasProperty("descripcion", is("Abrigos")),
-                hasProperty("categoria", is("Prendas")),
-                hasProperty("cantidad", is(1))
-
-        )));
-    }*/
-   /* @Test
+    }
+    @Test
     @WithMockUser
     void allowsToCreateANewStock() throws Exception {
 
-        //Stock stock = stockRepository.save(new Stock(1L, "Prendas01", "Abrigos", "Prendas", 1, 0, 0));
-
-        api.perform(post("/api/stocks/new"))
+        api.perform(post("/api/stocks/")
+                .with(csrf())
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"codigo\": \"Prendas01\", " +
+                        "\"descripcion\": \"Abrigos\"," +
+                        "\"category\": \"Prendas\"," +
+                        "\"cantidad\": 1 }" +
+                        "\"add\": 0 }" +
+                        "\"subtract\": 0 }"))
                 .andExpect(status().isOk());
 
         List<Stock> stocks = stockRepository.findAll();
@@ -123,12 +106,41 @@ class IntegrationTests {
         assertThat(stocks, contains(allOf(
                 hasProperty("codigo", is("Prendas01")),
                 hasProperty("descripcion", is("Abrigos")),
-                hasProperty("categoria", is("Prendas")),
+                hasProperty("category", is("Prendas")),
                 hasProperty("cantidad", is(1)),
                 hasProperty("add", is(0)),
                 hasProperty("subtract", is(0))
+
         )));
-    }*/
+    }
+
+    @Test
+    @WithMockUser
+    void returnsTheExistingStocks() throws Exception {
+
+        addSampleStocks();
+
+        this.api.perform(get("/api/stocks"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[*]", hasSize(2)))
+                .andExpect(jsonPath("$[0].codigo", equalTo("Prendas01")))
+                .andExpect(jsonPath("$[0].descripcion", equalTo("Abrigos")))
+                .andExpect(jsonPath("$[0].category", equalTo("Prendas")))
+                .andExpect(jsonPath("$[0].cantidad", equalTo(1)))
+                .andExpect(jsonPath("$[0].add", equalTo(0)))
+                .andExpect(jsonPath("$[0].subtract", equalTo(0)))
+                .andExpect(jsonPath("$[1].codigo", equalTo("Complementos01")))
+                .andExpect(jsonPath("$[1].descripcion", equalTo("Zapatos")))
+                .andExpect(jsonPath("$[1].category", equalTo("Complementos")))
+                .andExpect(jsonPath("$[1].cantidad", equalTo(1)))
+                .andExpect(jsonPath("$[1].add", equalTo(0)))
+                .andExpect(jsonPath("$[1].subtract", equalTo(0)))
+                .andDo(print());
+    }
+
+    private void addSampleStocks() {
+    }
+
 
 }
 

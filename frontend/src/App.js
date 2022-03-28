@@ -1,12 +1,12 @@
 import './App.css';
-import Home from "./home/Home";
+import Home from "./components/home/Home";
 import Navbar from "./components/header/Navbar";
 import { Navigate, Route, Routes} from "react-router-dom";
 import {New} from "./components/forms/New";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
 import React, {useEffect, useState} from "react";
-import StockTable from "./table/StockTable";
+import StockTable from "./components/table/StockTable";
 import StocksApi from "./apis/StocksApi";
 import Register from "./components/login/Register";
 import Profile from "./components/login/Profile";
