@@ -41,7 +41,7 @@ class ApplicationTests {
         stockRepository.deleteAll();
     }
 
-    @Test
+    /*@Test
     @WithMockUser
     void allowsToDeleteAnExistingStock() throws Exception {
 
@@ -140,7 +140,7 @@ class ApplicationTests {
     }
 
     private void addSampleStocks() {
-    }
+    }*/
 
 
 }
