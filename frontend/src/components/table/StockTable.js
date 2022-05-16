@@ -6,15 +6,11 @@ import {Link} from "react-router-dom";
 
 
 const StockTable = ({stocks, deleteStock}) => {
-
-
     return (
 
 
         <div className="table-container">
             <h1 className="categoryList-title">Stock</h1>
-
-
             <section className='categoryList'>
                 <div className='table-list'>
                     <tr className='category-table-title'>
