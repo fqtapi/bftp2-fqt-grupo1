@@ -1,7 +1,7 @@
 import './App.css';
 import Home from "./components/home/Home";
 import Navbar from "./components/header/Navbar";
-import { Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import {New} from "./components/forms/New";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
@@ -14,7 +14,7 @@ import Profile from "./components/login/Profile";
 
 
 function App() {
-
+    let navigate = useNavigate();
     const stocksApi = new StocksApi();
 
     const [requiresUpdate, setRequiresUpdate] = useState(true);
@@ -37,9 +37,10 @@ function App() {
             .then(_ => setRequiresUpdate(true))
     }
 
-    const deleteStock = (stock, category) => {
+    const deleteStock = (stock) => {
         return stocksApi.deleteStock(stock)
             .then(_ => setRequiresUpdate(true))
+            .then(() => navigate("/"))
 
     }
 

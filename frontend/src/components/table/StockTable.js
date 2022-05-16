@@ -27,7 +27,7 @@ const StockTable = ({stocks, deleteStock}) => {
                     </tr>
 
                     {stocks
-
+                        .sort((a,b) => a.codigo.localeCompare(b.codigo))
                         .map(stock =>
                             <tr className='category-table-row' key={stock.id} stock={stock}>
                                 <td className="category-td">{stock.codigo}</td>

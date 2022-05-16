@@ -30,7 +30,7 @@ export const New = (props) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         props.addStock(datos)
-            .then(() => navigate("/stocks"))
+            .then(() => navigate("/"))
     }
 
     return (
