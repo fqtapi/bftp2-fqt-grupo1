@@ -19,7 +19,7 @@ function Home({onCategoryClicked}) {
                         category={category} key={index}
                         onClick={() => {
                             onCategoryClicked(category);
-                            navigate("/stocks")
+                            navigate("/stocks/")
                         }}
                     />)}
 
